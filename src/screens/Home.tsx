@@ -1,20 +1,12 @@
 import React, {useEffect} from 'react';
-import {
-  View,
-  Image,
-  TouchableOpacity,
-  FlatList,
-  StyleSheet,
-} from 'react-native';
+import {FlatList, StyleSheet} from 'react-native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {Layout, Text} from '@ui-kitten/components';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import {Rating} from 'react-native-elements';
+import {Layout} from '@ui-kitten/components';
 import {useDispatch, useSelector} from 'react-redux';
-import {getHotels, selectHotel} from '../actions';
-import {RootState} from '../reducers';
+import {getHotels, selectHotel} from '../redux/actions';
+import {RootState} from '../redux/reducers';
 import {IHotel} from '../models';
-import {baseURL} from '../config/config';
+import {HotelItem} from '../components/home/HotelItem';
 
 type Props = {
   hotels: Array<IHotel>;
@@ -30,40 +22,7 @@ const Home: React.FC<Props> = props => {
   }, [dispatch]);
 
   const _renderItem = ({item}: {item: IHotel}) => {
-    return (
-      <TouchableOpacity
-        style={styles.hotelRow}
-        onPress={() => onSelectHotel(item)}>
-        <Image
-          source={{uri: `${baseURL}/files/${item.main_picture}/view`}}
-          style={styles.imageStyle}
-        />
-        <View style={styles.info}>
-          <View style={styles.row}>
-            <Text style={styles.title}>{item.name}</Text>
-            <Rating
-              imageSize={13}
-              readonly
-              startingValue={item.rating}
-              style={styles.iconAdressStyle}
-            />
-          </View>
-          <View style={styles.row}>
-            <Icon
-              name="map-marker"
-              size={12}
-              color="#000"
-              style={styles.iconAdressStyle}
-            />
-            <Text style={styles.adress}>{item.short_address}</Text>
-          </View>
-          <View style={styles.typeStyle}>
-            <Text style={styles.room}>{item.type}</Text>
-            <Text style={styles.price}>€{item.rooms[0].price}</Text>
-          </View>
-        </View>
-      </TouchableOpacity>
-    );
+    return <HotelItem item={item} onSelectHotel={onSelectHotel} />;
   };
 
   const onSelectHotel = (item: IHotel) => {

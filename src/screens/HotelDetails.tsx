@@ -1,24 +1,30 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {StyleSheet, ScrollView, View, Image, Text, Alert} from 'react-native';
 import {Datepicker} from '@ui-kitten/components';
 import {useDispatch, useSelector} from 'react-redux';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {Rating, Button} from 'react-native-elements';
 import Moment from 'moment';
-import {RootState} from '../reducers';
+import {RootState} from '../redux/reducers';
 import {IBook} from '../models';
 import {baseURL} from '../config/config';
-import {updateReservation} from '../actions/book';
+import {updateReservation} from '../redux/actions';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
 type Props = {
   book: IBook;
+  navigation: NativeStackNavigationProp<any>;
 };
 
-const HotelDetails: React.FC<Props> = () => {
+const HotelDetails: React.FC<Props> = props => {
   const dispatch = useDispatch();
   const bookState: RootState = useSelector((state: RootState) => state.book);
 
   const book: IBook = bookState.book;
+
+  useEffect(() => {
+    props.navigation.setOptions({title: `${book.hotel.name}`});
+  });
 
   const _pickDate = (type: string, value: Date) => {
     let booking: IBook = book;
@@ -130,7 +136,7 @@ const HotelDetails: React.FC<Props> = () => {
 
                 <Datepicker
                   style={{width: 140}}
-                  date={book.night_numbers === 0 ? null : book.check_in_date}
+                  date={book.check_in_date}
                   onSelect={date => _pickDate('checkIn', date)}
                   placeholder={
                     book.night_numbers === 0
@@ -145,7 +151,7 @@ const HotelDetails: React.FC<Props> = () => {
                 <Text style={styles.dateCheck}>Check-out</Text>
                 <Datepicker
                   style={{width: 140}}
-                  date={book.night_numbers === 0 ? null : book.check_out_date}
+                  date={book.check_out_date}
                   onSelect={date => _pickDate('checkOut', date)}
                   placeholder={
                     book.night_numbers === 0

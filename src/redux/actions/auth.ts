@@ -1,5 +1,5 @@
-import actionTypes from '../utils/actionTypes';
-import {IUser} from '../models/IUser';
+import actionTypes from '../../utils/actionTypes';
+import {IUser} from '../../models/user';
 // import {AuthState} from '../types';
 
 export const saveAccount = (account: IUser) => ({

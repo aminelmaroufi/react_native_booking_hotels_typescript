@@ -1,5 +1,5 @@
-import ActionTypes from '../utils/actionTypes';
-import {IHotel, IBook} from '../models';
+import ActionTypes from '../../utils/actionTypes';
+import {IHotel, IBook} from '../../models';
 
 export const getHotels = () => ({
   type: ActionTypes.GET_HOTELS,

@@ -4,7 +4,10 @@ export enum Routes {
   //Screens
   HOME_SCREEN = 'Home',
   HOTEL_DETAILS_SCREEN = 'HotelDetails',
+  BOOKING_SCREEN = 'Booking',
   //Stacks
+  HOME_STACK = 'Home',
+  BOOKING_STACK = 'Bookings',
 }
 
 type RootStackParamList = {

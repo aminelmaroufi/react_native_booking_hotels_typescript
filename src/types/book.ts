@@ -3,6 +3,7 @@ import {IHotel, IBook} from '../models';
 
 export interface BookState {
   book: IBook | null;
+  bookings: Array<IBook>;
 }
 
 export interface IResult {

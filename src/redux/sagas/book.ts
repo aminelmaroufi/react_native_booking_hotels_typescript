@@ -1,6 +1,6 @@
-import ActionTypes from '../utils/actionTypes';
+import ActionTypes from '../../utils/actionTypes';
 import {put, call, all, takeLatest} from 'redux-saga/effects';
-import {getHotels} from '../api';
+import {getHotels} from '../../api';
 import {AxiosResponse} from 'axios';
 
 function* get_hotels() {
@@ -10,12 +10,17 @@ function* get_hotels() {
     const data = response.data;
 
     if (data.ok) {
-      yield put({
-        type: ActionTypes.SET_HOTELS,
-        payload: {
-          hotels: data.result.hotels,
-        },
-      });
+      yield all([
+        put({
+          type: ActionTypes.API_CALL_SUCCESS,
+        }),
+        put({
+          type: ActionTypes.SET_HOTELS,
+          payload: {
+            hotels: data.result.hotels,
+          },
+        }),
+      ]);
     } else {
       yield put({
         type: ActionTypes.API_CALL_FAILURE,

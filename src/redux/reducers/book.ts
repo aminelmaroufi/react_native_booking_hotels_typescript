@@ -1,6 +1,6 @@
-import ActionTypes from '../utils/actionTypes';
-import {IHotel, IRoom} from '../models';
-import {BookState, bookActions} from '../types';
+import ActionTypes from '../../utils/actionTypes';
+import {IHotel, IRoom} from '../../models';
+import {BookState, bookActions} from '../../types';
 
 const emptyHotel: IHotel = {
   _id: '',
@@ -27,11 +27,12 @@ const initialState: BookState = {
   book: {
     hotel: emptyHotel,
     room: emptyRoom,
-    check_in_date: new Date(),
-    check_out_date: new Date(),
+    check_in_date: null,
+    check_out_date: null,
     night_numbers: 0,
     price: 0,
   },
+  bookings: [],
 };
 
 export default function reducer(state = initialState, action: bookActions) {

@@ -1,5 +1,5 @@
-import ActionTypes from '../utils/actionTypes';
-import {HotelState, hotelActions} from '../types';
+import ActionTypes from '../../utils/actionTypes';
+import {HotelState, hotelActions} from '../../types';
 
 const initialState: HotelState = {
   hotels: [],

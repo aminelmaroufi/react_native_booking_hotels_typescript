@@ -1,5 +1,5 @@
-import ActionTypes from '../utils/actionTypes';
-import {authActions, AuthState} from '../types';
+import ActionTypes from '../../utils/actionTypes';
+import {authActions, AuthState} from '../../types';
 
 const initialState: AuthState = {
   fetching: false,

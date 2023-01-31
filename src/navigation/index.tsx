@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+
 import HomeStackNavigator from './HomeNavigation';
 import BookingsStackNavigator from './BookingNavigation';
 import {Routes} from './routes';
@@ -8,9 +9,9 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const Tab = createBottomTabNavigator();
 
-const RootNavigation = () => {
+const RootNavigation = ({}, ref: React.Ref<any>) => {
   return (
-    <NavigationContainer>
+    <NavigationContainer ref={ref}>
       <Tab.Navigator
         initialRouteName={Routes.HOME_STACK}
         screenOptions={({route}) => ({
@@ -20,7 +21,7 @@ const RootNavigation = () => {
 
             if (route.name === Routes.HOME_STACK) {
               iconName = 'home';
-            } else if (route.name === Routes.BOOKING_STACK) {
+            } else if (route.name === Routes.BOOKINGS_STACK) {
               iconName = 'list';
             }
 
@@ -32,7 +33,7 @@ const RootNavigation = () => {
         })}>
         <Tab.Screen name={Routes.HOME_STACK} component={HomeStackNavigator} />
         <Tab.Screen
-          name={Routes.BOOKING_STACK}
+          name={Routes.BOOKINGS_STACK}
           component={BookingsStackNavigator}
         />
       </Tab.Navigator>
@@ -40,4 +41,4 @@ const RootNavigation = () => {
   );
 };
 
-export default RootNavigation;
+export default React.forwardRef(RootNavigation);

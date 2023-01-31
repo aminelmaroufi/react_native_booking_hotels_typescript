@@ -1,15 +1,8 @@
-import {IBook, ICard} from '../models';
 import adapter from '../utils/adapter';
+import {IUser} from '../models';
 
-export const getHotels = (params: any) => {
-  const query = `q=${params.q}&page=${params.page}`;
-  return adapter.get(`/hotels?${query}`).catch(err => {
-    return Promise.reject(err.response ? err.response.data.result : err);
-  });
-};
-
-export const addCard = (card: ICard) => {
-  return adapter.post('/customers/cards', card).catch(err => {
+export const checkUser = () => {
+  return adapter.get('/me').catch(err => {
     let error: any;
     if (typeof err === 'string') {
       error.message = err;
@@ -22,8 +15,8 @@ export const addCard = (card: ICard) => {
   });
 };
 
-export const createBooking = (book: IBook) => {
-  return adapter.post('/customers/bookings', book).catch(err => {
+export const saveAccount = (user: IUser) => {
+  return adapter.post('/auth/signup', user).catch(err => {
     let error: any;
     if (typeof err === 'string') {
       error.message = err;
@@ -36,8 +29,12 @@ export const createBooking = (book: IBook) => {
   });
 };
 
-export const getBookings = () => {
-  return adapter.get('/customers/bookings').catch(err => {
+export const login = (email: string, password: string) => {
+  const payload = {
+    username: email,
+    password: password,
+  };
+  return adapter.post('/auth/signin?scope=customer', payload).catch(err => {
     let error: any;
     if (typeof err === 'string') {
       error.message = err;

@@ -2,12 +2,17 @@ import {StackScreenProps} from '@react-navigation/stack';
 
 export enum Routes {
   //Screens
-  HOME_SCREEN = 'Home',
+  HOME_SCREEN = 'HOME_SCREEN',
   HOTEL_DETAILS_SCREEN = 'HotelDetails',
-  BOOKING_SCREEN = 'Booking',
+  CHECK_ROOMS_SCREEN = 'CHECK_ROOMS',
+  ACCOUNT_SCREEN = 'Account',
+  LOGIN_SCREEN = 'Login',
+  BOOKINGS_SCREEN = 'BookingsHistory',
+  OVERVIEW_SCREEN = 'Overview',
+  BOOK_SCREEN = 'Book',
   //Stacks
   HOME_STACK = 'Home',
-  BOOKING_STACK = 'Bookings',
+  BOOKINGS_STACK = 'Bookings',
 }
 
 type RootStackParamList = {

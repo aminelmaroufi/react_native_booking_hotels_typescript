@@ -1,13 +1,13 @@
 import actionTypes from '../utils/actionTypes';
-import {IUser} from '../models/user';
+import {IUser, ISecureCard} from '../models';
 
 export interface AuthState {
-  fetching: Boolean;
-  isLoggedIn: Boolean | null;
-  message: String;
-  error: Boolean;
-  user: IUser | null;
-  success: Boolean;
+  fetching: boolean;
+  isLoggedIn: boolean | null;
+  message: string;
+  error: boolean;
+  user: IUser;
+  success: boolean;
 }
 
 export interface FetchRequestPayload {
@@ -23,15 +23,37 @@ export interface FetchRequestSuccessPayload {
 }
 
 export interface FetchRequestFailurePayload {
-  fetching: false;
-  error: true;
+  fetching: boolean;
+  error: boolean;
   message: string;
+}
+
+export interface checkUserSuccess {
+  user: IUser;
+  isLoggedIn: boolean;
+}
+
+export interface saveAccountSuccess {
+  user: IUser;
+}
+
+export interface loginSuccess {
+  user: IUser;
+  isLoggedIn: boolean;
 }
 
 export interface FetchRequestSuccessOperationPayload {
   fetching: false;
   success: true;
   message: string;
+}
+
+export interface addCardSuccess {
+  card: ISecureCard;
+}
+
+export interface setDefaultCard {
+  card: ISecureCard;
 }
 
 export type FetchRequest = {
@@ -54,8 +76,38 @@ export type FetchRequestSuccessOperation = {
   payload: FetchRequestSuccessOperationPayload;
 };
 
+export type saveAccountSuccessPayload = {
+  type: actionTypes.CREATE_ACCOUNT_SUCCESS;
+  payload: saveAccountSuccess;
+};
+
+export type checkUserSuccessPayload = {
+  type: actionTypes.CHECK_USER_SUCCESS;
+  payload: checkUserSuccess;
+};
+
+export type loginSuccessPayload = {
+  type: actionTypes.LOGIN_SUCCESS;
+  payload: loginSuccess;
+};
+
+export type addCardSuccessPayload = {
+  type: actionTypes.ADD_CARD_SUCCESS;
+  payload: addCardSuccess;
+};
+
+export type setDefaultCardsPayload = {
+  type: actionTypes.SET_DEFAULT_CARD;
+  payload: setDefaultCard;
+};
+
 export type authActions =
   | FetchRequest
   | FetchRequestSuccess
   | FetchRequestFailure
-  | FetchRequestSuccessOperation;
+  | FetchRequestSuccessOperation
+  | saveAccountSuccessPayload
+  | loginSuccessPayload
+  | checkUserSuccessPayload
+  | addCardSuccessPayload
+  | setDefaultCardsPayload;

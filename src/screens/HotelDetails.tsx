@@ -19,7 +19,6 @@ type Props = {
 const HotelDetails: React.FC<Props> = props => {
   const dispatch = useDispatch();
   const bookState: RootState = useSelector((state: RootState) => state.book);
-
   const book: IBook = bookState.book;
 
   useEffect(() => {
@@ -60,7 +59,7 @@ const HotelDetails: React.FC<Props> = props => {
         {cancelable: false},
       );
     } else if (
-      Moment(book.check_out_date).diff(book.check_in_date, 'days') === 0
+      Moment(book.check_out_date).diff(book.check_in_date, 'days') < 0
     ) {
       Alert.alert(
         'Reservation Date',
@@ -68,6 +67,8 @@ const HotelDetails: React.FC<Props> = props => {
         [{text: 'OK', onPress: () => console.log('OK Pressed')}],
         {cancelable: false},
       );
+    } else {
+      props.navigation.navigate('CHECK_ROOMS');
     }
   };
 

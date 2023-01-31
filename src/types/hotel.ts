@@ -3,10 +3,18 @@ import {IHotel} from '../models';
 
 export interface HotelState {
   hotels: Array<IHotel>;
+  total: number;
+  pages: number;
+  page: number;
+  limit: number;
 }
 
 export interface fetchHotels {
   hotels: Array<IHotel>;
+  total: number;
+  pages: number;
+  page: number;
+  limit: number;
 }
 
 export type fecthHotelsPayload = {

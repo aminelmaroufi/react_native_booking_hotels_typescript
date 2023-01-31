@@ -19,8 +19,12 @@ const BookingsStackNavigator = () => {
         },
         headerBackTitle: '',
       }}
-      initialRouteName={Routes.BOOKING_SCREEN}>
-      <Stack.Screen name={Routes.BOOKING_SCREEN} component={Bookings} />
+      initialRouteName={Routes.BOOKINGS_SCREEN}>
+      <Stack.Screen
+        name={Routes.BOOKINGS_SCREEN}
+        component={Bookings}
+        options={() => ({title: 'Bookings'})}
+      />
     </Stack.Navigator>
   );
 };

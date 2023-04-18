@@ -1,0 +1,5 @@
+d7d70c66db51d81a754bb9dfe6a8f66e
+module.exports = {
+      testUri:
+        "../../react-native-ratings/dist/images/rocket.png"
+    };

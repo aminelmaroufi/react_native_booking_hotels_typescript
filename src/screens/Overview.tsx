@@ -8,6 +8,7 @@ import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {useSelector, useDispatch} from 'react-redux';
 import {IBook, IUser} from '../models';
 import {RootState} from '../redux/reducers';
+import {baseURL} from '../config/config';
 
 type Props = {
   navigation: NativeStackNavigationProp<any>;
@@ -22,7 +23,7 @@ const Overview: React.FC<Props> = props => {
     <Layout style={styles.container}>
       <View style={styles.row}>
         <Image
-          source={require('../assets/1.jpeg')}
+          source={{uri: `${baseURL}/files/${book.hotel.second_picture}/view`}}
           style={{
             height: 90,
             width: 80,

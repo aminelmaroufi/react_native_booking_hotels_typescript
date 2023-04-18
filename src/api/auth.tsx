@@ -16,6 +16,7 @@ export const checkUser = () => {
 };
 
 export const saveAccount = (user: IUser) => {
+  user.cards = [];
   return adapter.post('/auth/signup', user).catch(err => {
     let error: any;
     if (typeof err === 'string') {

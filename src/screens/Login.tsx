@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   StyleSheet,
   TouchableWithoutFeedback,
@@ -15,11 +15,7 @@ import {RootState} from '../redux/reducers';
 import {loginRequest} from '../redux/actions';
 import {LoginFormMessages} from '../utils/actionTypes';
 
-type Props = {
-  navigation: NativeStackNavigationProp<any>;
-};
-
-const Login: React.FC<Props> = props => {
+const Login: React.FC<Props> = () => {
   let passwordRef: any = null;
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
@@ -100,7 +96,7 @@ const Login: React.FC<Props> = props => {
   }, [email, password]);
 
   const login = () => {
-    dispatch(loginRequest(email, password, props.navigation));
+    dispatch(loginRequest(email, password));
   };
 
   useEffect(() => {
@@ -116,10 +112,15 @@ const Login: React.FC<Props> = props => {
 
   return (
     <Layout style={styles.container}>
-      <Image source={require('../assets/logo.png')} style={styles.logo} />
+      <Image
+        testID="logo"
+        source={require('../assets/logo.png')}
+        style={styles.logo}
+      />
       <View style={styles.form}>
         <View style={styles.inputContainer}>
           <Input
+            testID="email"
             autoFocus
             label="Email Address"
             placeholder="Place your email address"
@@ -170,6 +171,7 @@ const Login: React.FC<Props> = props => {
         </View>
         <View style={styles.inputContainer}>
           <Input
+            testID="password"
             ref={ref => (passwordRef = ref)}
             label="Password"
             placeholder="Place your password"
@@ -200,6 +202,7 @@ const Login: React.FC<Props> = props => {
 
         <View style={styles.buttonContainer}>
           <Button
+            testID="login-btn"
             title={'Login'}
             containerStyle={{width: 'auto'}}
             buttonStyle={styles.button}

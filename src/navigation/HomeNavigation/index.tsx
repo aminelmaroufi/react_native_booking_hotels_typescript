@@ -8,6 +8,7 @@ import Account from '../../screens/Account';
 import Login from '../../screens/Login';
 import Overview from '../../screens/Overview';
 import Book from '../../screens/Book';
+import ServerError from '../../screens/ServerError';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +25,7 @@ const HomeStackNavigator = () => {
           fontWeight: 'bold',
         },
         headerBackTitle: '',
+        headerTitleAlign: 'center',
       }}
       initialRouteName={Routes.HOME_SCREEN}>
       <Stack.Screen
@@ -51,6 +53,15 @@ const HomeStackNavigator = () => {
         name={Routes.BOOK_SCREEN}
         component={Book}
         options={() => ({title: 'Book Now'})}
+      />
+      <Stack.Screen
+        name={Routes.SERVER_ERROR_SCREEN}
+        component={ServerError}
+        options={() => ({
+          title: 'Server Error',
+
+          headerBackVisible: false,
+        })}
       />
     </Stack.Navigator>
   );

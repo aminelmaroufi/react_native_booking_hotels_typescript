@@ -8,8 +8,9 @@
  * @format
  */
 
-import React, {Ref, RefObject, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import {StyleSheet, useColorScheme} from 'react-native';
+import SplashScreen from 'react-native-splash-screen';
 import * as eva from '@eva-design/eva';
 import {useSelector, useDispatch} from 'react-redux';
 import {ApplicationProvider, Layout, Spinner} from '@ui-kitten/components';
@@ -19,25 +20,13 @@ import RootNavigation from './src/navigation';
 import {navigationRef} from './src/navigation/rootNavigation';
 import {checkUser} from './src/redux/actions';
 
-// import {
-//   Colors,
-//   DebugInstructions,
-//   Header,
-//   LearnMoreLinks,
-//   ReloadInstructions,
-// } from 'react-native/Libraries/NewAppScreen';
-
 const App = () => {
   let dropDownAlertRef: any;
   const dispatch = useDispatch();
   const isDarkMode = useColorScheme() === 'dark';
-  const {user, fetching, message, error, success} = useSelector(
+  const {fetching, message, error, success} = useSelector(
     (state: RootState) => state.auth,
   );
-
-  // const backgroundStyle = {
-  //   backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  // };
 
   useEffect(() => {
     const showToast = () => {
@@ -51,11 +40,12 @@ const App = () => {
     };
 
     showToast();
-  }, [error, success]);
+  }, [dropDownAlertRef, error, success, message]);
 
   useEffect(() => {
+    SplashScreen.hide();
     dispatch(checkUser());
-  }, []);
+  }, [dispatch]);
 
   return (
     <ApplicationProvider {...eva} theme={isDarkMode ? eva.dark : eva.light}>

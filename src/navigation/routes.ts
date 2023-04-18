@@ -10,6 +10,7 @@ export enum Routes {
   BOOKINGS_SCREEN = 'BookingsHistory',
   OVERVIEW_SCREEN = 'Overview',
   BOOK_SCREEN = 'Book',
+  SERVER_ERROR_SCREEN = 'SERVER_ERROR_SCREEN',
   //Stacks
   HOME_STACK = 'Home',
   BOOKINGS_STACK = 'Bookings',

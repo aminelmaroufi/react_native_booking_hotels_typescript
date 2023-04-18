@@ -1,0 +1,5 @@
+5f3d1ac4fe14b88d2e347e96d748defe
+module.exports = {
+      testUri:
+        "../../react-native-ratings/dist/images/airbnb-star-selected.png"
+    };

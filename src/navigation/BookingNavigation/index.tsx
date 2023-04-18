@@ -18,6 +18,7 @@ const BookingsStackNavigator = () => {
           fontWeight: 'bold',
         },
         headerBackTitle: '',
+        headerTitleAlign: 'center',
       }}
       initialRouteName={Routes.BOOKINGS_SCREEN}>
       <Stack.Screen

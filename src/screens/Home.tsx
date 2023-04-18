@@ -1,42 +1,35 @@
-import React, {useEffect, useRef, useState} from 'react';
-import {FlatList, StyleSheet, TouchableWithoutFeedback} from 'react-native';
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import React, {useEffect, useState} from 'react';
+import {FlatList, StyleSheet} from 'react-native';
 import {Layout, Input} from '@ui-kitten/components';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {useDispatch, useSelector} from 'react-redux';
-import {debounceTime, startWith} from 'rxjs/operators';
+import {debounceTime} from 'rxjs/operators';
 import {Subject} from 'rxjs';
+import {useNavigation} from '@react-navigation/native';
 import {getHotels, getMoreHotels, selectHotel} from '../redux/actions';
 import {RootState} from '../redux/reducers';
 import {IHotel} from '../models';
 import {HotelItem} from '../components/home/HotelItem';
 
-type Props = {
-  hotels: Array<IHotel>;
-  navigation: NativeStackNavigationProp<any>;
-};
+// type Props = {
+//   hotels: Array<IHotel>;
+// };
 
-const Home: React.FC<Props> = props => {
-  let ref = useRef();
+const Home: React.FC = () => {
+  const navigation = useNavigation();
   const dispatch = useDispatch();
   const {hotels, pages, page} = useSelector((state: RootState) => state.hotel);
   const [refreshing, setRefreshing] = useState(false);
-  const [searchTerm, setSearchTerm] = useState(() => new Subject());
+  const [searchTerm] = useState(() => new Subject());
   const [q, setTermText] = useState('');
 
-  const SearchIcon = (props: any) => (
-    <Icon
-      style={styles.searchIcon}
-      {...props}
-      name="search"
-      size={20}
-      color="#444"
-    />
+  const SearchIcon = () => (
+    <Icon style={styles.searchIcon} name="search" size={20} color="#444" />
   );
 
   useEffect(() => {
     dispatch(getHotels({q: '', page: 1}));
-  }, [dispatch]);
+  }, []);
 
   useEffect(() => {
     setRefreshing(false);
@@ -69,7 +62,7 @@ const Home: React.FC<Props> = props => {
 
   const onSelectHotel = (item: IHotel) => {
     dispatch(selectHotel(item));
-    props.navigation?.navigate('HotelDetails');
+    navigation?.navigate('HotelDetails');
   };
 
   const _handleRefresh = () => {
@@ -90,13 +83,8 @@ const Home: React.FC<Props> = props => {
 
   return (
     <Layout style={styles.container}>
-      {/* <Input
-        placeholder="Search"
-        icon={SearchIcon}
-        style={{backgroundColor: '#ddd', borderRadius: 100, marginTop: 5}}
-      /> */}
       <Input
-        ref={element => (ref = element)}
+        testID="search-box"
         placeholder="Search hotel by name, city ...."
         accessoryRight={SearchIcon}
         onChangeText={nextValue => setTermText(nextValue)}
@@ -131,7 +119,8 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   searchIcon: {
-    marginTop: 60,
+    marginRight: 5,
+    color: '#888',
   },
   hotelRow: {
     flexDirection: 'row',

@@ -1,27 +1,35 @@
+import {AxiosError} from 'axios';
+import ActionTypes from '../actionTypes';
 import * as RootNavigation from '../../navigation/rootNavigation';
+import adapter from '../adapter';
 
-const DEBUG = process.env.REACT_APP_NODE_ENV !== 'production';
-const errorInterceptor = axiosInstance => {
-  axiosInstance.interceptors.response.use(
-    response => {
-      //Response Successful
-    },
-    error => {
-      error = JSON.stringify(error);
-      error = JSON.parse(error);
-
-      if (error?.status === 401) {
-        return RootNavigation.navigate('/login', {});
-        //Unauthorized
-        //redirect to Login
+const errorInterceptor = store => {
+  adapter.interceptors.response.use(
+    response => response,
+    (error: AxiosError) => {
+      console.log('error server');
+      if (!error.response) {
+        return RootNavigation.navigate('SERVER_ERROR_SCREEN', {});
+      } else if (error.response && error.response.status === 401) {
+        store.dispatch({
+          type: ActionTypes.API_CALL_FAILURE,
+          payload: {
+            message: error.response.data.result.message,
+          },
+        });
+        return RootNavigation.navigate('Home', {});
+      } else if (error.response && error.response.status === 503) {
+        return RootNavigation.navigate('SERVER_ERROR_SCREEN', {});
       } else {
         //dispatch your error in a more user friendly manner
-        if (DEBUG) {
-          //easier debugging
-          console.group('Error');
-          console.log(error);
-          console.groupEnd();
-        }
+        // if (DEBUG) {
+        //   //easier debugging
+        //   console.group('Error');
+        //   console.log(error);
+        //   console.groupEnd();
+        // }
+        console.log('error status:', error.response.status);
+        return error.response;
       }
     },
   );

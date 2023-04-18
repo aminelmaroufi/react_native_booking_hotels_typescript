@@ -9,3 +9,4 @@ export {
   getBookings,
 } from './book';
 export {checkUser, updateUserFields, saveAccount, loginRequest} from './auth';
+export {navigateToScreen} from './navigation';

@@ -13,19 +13,13 @@ export const updateUserFields = (user: IUser) => ({
   },
 });
 
-export const saveAccount = (account: IUser, navigation: any) => ({
+export const saveAccount = (account: IUser) => ({
   type: actionTypes.SAVE_ACCOUNT_REQUEST,
   account,
-  navigation,
 });
 
-export const loginRequest = (
-  email: string,
-  password: string,
-  navigation: any,
-) => ({
+export const loginRequest = (email: string, password: string) => ({
   type: actionTypes.LOGIN_REQUEST,
   email,
   password,
-  navigation,
 });

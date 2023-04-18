@@ -1,0 +1,342 @@
+71e169886a1de864a806cd2e448f2e27
+import const hotels = [
+  {
+    "rating": 4,
+    "rooms": [
+      {
+        "price": 150,
+        "_id": "62b9b8f2ed823f5a782a2cf3",
+        "title": "Budget Double Room without Window",
+        "advantage": "1 full bed",
+        "room_picture": "62b9b8f2ed823f5a782a2cf1",
+        "created_at": "2022-06-27T14:04:34.748Z",
+        "updated_at": "2022-06-27T14:04:34.748Z"
+      },
+      {
+        "price": 145,
+        "_id": "62b9b90eed823f5a782a2cf7",
+        "title": "Small Double Room",
+        "advantage": "1 full bed",
+        "room_picture": "62b9b90eed823f5a782a2cf5",
+        "created_at": "2022-06-27T14:05:02.218Z",
+        "updated_at": "2022-06-27T14:05:02.218Z"
+      }
+    ],
+    "_id": "62b9b8a1ed823f5a782a2cf0",
+    "name": "Joy Hotel",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "short_address": "Bullwijlk station is within 250m",
+    "address": "85 Hullenbergweg, Zuidoost, 1101 CS Amsterdam, Netherlands",
+    "location": "8.5 km from centerSubway Access",
+    "type": "85 Hullenbergweg, Zuidoost, 1101 CS Amsterdam, Netherlands",
+    "main_picture": "62b9b8a1ed823f5a782a2cec",
+    "second_picture": "62b9b8a1ed823f5a782a2ced"
+  },
+  {
+    "rating": 5,
+    "rooms": [
+      {
+        "price": 147,
+        "_id": "62b9b749ed823f5a782a2ce2",
+        "title": "Premium Queen",
+        "advantage": "1 queen bed",
+        "room_picture": "62b9b749ed823f5a782a2ce0",
+        "created_at": "2022-06-27T13:57:29.352Z",
+        "updated_at": "2022-06-27T13:57:29.352Z"
+      },
+      {
+        "price": 250,
+        "_id": "62b9b779ed823f5a782a2ce6",
+        "title": "Premium Queen View",
+        "advantage": "1 full bed",
+        "room_picture": "62b9b779ed823f5a782a2ce4",
+        "created_at": "2022-06-27T13:58:17.834Z",
+        "updated_at": "2022-06-27T13:58:17.834Z"
+      },
+      {
+        "price": 350,
+        "_id": "62b9b7bfed823f5a782a2cea",
+        "title": "Triple Room",
+        "advantage": "1 bunk bed  and 1 queen bed ",
+        "room_picture": "62b9b7bfed823f5a782a2ce8",
+        "created_at": "2022-06-27T13:59:27.669Z",
+        "updated_at": "2022-06-27T13:59:27.669Z"
+      }
+    ],
+    "_id": "62b9b70eed823f5a782a2cdf",
+    "name": "YOTEL Amsterdam",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "short_address": "Yotel Amsterdam",
+    "address": "Asterweg 27-37, Amsterdam Noord, 1031 HM Amsterdam, Netherlands",
+    "location": "2.2 km from center",
+    "type": "2.2 km from center",
+    "main_picture": "62b9b70eed823f5a782a2cdb",
+    "second_picture": "62b9b70eed823f5a782a2cdc"
+  },
+  {
+    "rating": 4,
+    "rooms": [
+      {
+        "price": 229,
+        "_id": "62b46fb1899a4c0c17c65357",
+        "title": "Cozy Double Room",
+        "advantage": "1 full bed",
+        "room_picture": "62b46fb1899a4c0c17c65355",
+        "created_at": "2022-06-23T13:50:41.062Z",
+        "updated_at": "2022-06-23T13:50:41.062Z"
+      }
+    ],
+    "_id": "62b46f70899a4c0c17c65354",
+    "name": "Maisons du Monde Hôtel & Suites ",
+    "city": "Marseille",
+    "country": "France",
+    "short_address": "Vieux Port station is within 200m",
+    "address": "3 Quai des Belges, 13001 Marseille, France ",
+    "location": "0.5 km from centerSubway Access",
+    "type": "1 full bed",
+    "main_picture": "62b46f70899a4c0c17c65350",
+    "second_picture": "62b46f70899a4c0c17c65351"
+  },
+  {
+    "rating": 4,
+    "rooms": [
+      {
+        "price": 112,
+        "_id": "62b46e47899a4c0c17c6534a",
+        "title": "One-Bedroom Apartment",
+        "advantage": "1 queen bed",
+        "room_picture": "62b46e47899a4c0c17c65348",
+        "created_at": "2022-06-23T13:44:39.825Z",
+        "updated_at": "2022-06-23T13:44:39.825Z"
+      },
+      {
+        "price": 112,
+        "_id": "62b46e79899a4c0c17c6534e",
+        "title": "Deluxe Apartment",
+        "advantage": "1 queen be",
+        "room_picture": "62b46e79899a4c0c17c6534c",
+        "created_at": "2022-06-23T13:45:29.431Z",
+        "updated_at": "2022-06-23T13:45:29.431Z"
+      }
+    ],
+    "_id": "62b46e04899a4c0c17c65347",
+    "name": "Les appartements chics du Vieux-PortOpens in new window",
+    "city": "Marseille",
+    "country": "France",
+    "short_address": "0.6 km from center",
+    "address": "2 rue Venture, 13001 Marseille, France",
+    "location": "Estrangin - Préfecture subway station is within 350m",
+    "type": "One-Bedroom Apartment",
+    "main_picture": "62b46e04899a4c0c17c65343",
+    "second_picture": "62b46e04899a4c0c17c65344"
+  },
+  {
+    "rating": 4,
+    "rooms": [
+      {
+        "price": 108,
+        "_id": "62b3373e899a4c0c17c6533d",
+        "title": "Double room",
+        "advantage": "Breakfast availible, pay at the property.",
+        "room_picture": "62b3373e899a4c0c17c6533b",
+        "created_at": "2022-06-22T15:37:34.406Z",
+        "updated_at": "2022-06-22T15:37:34.406Z"
+      },
+      {
+        "price": 100,
+        "_id": "62b33798899a4c0c17c65341",
+        "title": "Twin room",
+        "advantage": "2 twin beds",
+        "room_picture": "62b33798899a4c0c17c6533f",
+        "created_at": "2022-06-22T15:39:04.738Z",
+        "updated_at": "2022-06-22T15:39:04.738Z"
+      }
+    ],
+    "_id": "62b336f6899a4c0c17c6533a",
+    "name": "Hotel le Nice Etoile",
+    "city": "Nice",
+    "country": "France",
+    "short_address": "0.5 km from centerBeach Nearby",
+    "address": " 14 Rue Biscarra, 06000 Nice, France",
+    "location": "900 m from Plage Beau Rivage (8.1) • 13 min walk",
+    "type": "Double room",
+    "main_picture": "62b336f6899a4c0c17c65336",
+    "second_picture": "62b336f6899a4c0c17c65337"
+  },
+  {
+    "rating": 4,
+    "rooms": [
+      {
+        "price": 115,
+        "_id": "62b335ba899a4c0c17c65330",
+        "title": "Studio with belcony",
+        "advantage": "1 full bed",
+        "room_picture": "62b335ba899a4c0c17c6532e",
+        "created_at": "2022-06-22T15:31:06.873Z",
+        "updated_at": "2022-06-22T15:31:06.873Z"
+      },
+      {
+        "price": 100,
+        "_id": "62b335e7899a4c0c17c65334",
+        "title": "Studio",
+        "advantage": "twin beds",
+        "room_picture": "62b335e7899a4c0c17c65332",
+        "created_at": "2022-06-22T15:31:51.308Z",
+        "updated_at": "2022-06-22T15:31:51.308Z"
+      }
+    ],
+    "_id": "62b334fd899a4c0c17c6532d",
+    "name": "Residhome Nice AéroportOpens in new window",
+    "city": "Nice",
+    "country": "France",
+    "short_address": "1.8 km from Plage Cousteau (7.6) • 33 min walk",
+    "address": "455 Promenade des Anglais, batiment Nouvel'R, Arenas, 06200 Nice, France ",
+    "location": "5.6 km from centerBeach Nearby",
+    "type": "Studios",
+    "main_picture": "62b334fd899a4c0c17c65329",
+    "second_picture": "62b334fd899a4c0c17c6532a"
+  },
+  {
+    "rating": 3,
+    "rooms": [
+      {
+        "price": 35,
+        "_id": "62b331e8899a4c0c17c6531f",
+        "title": "Single Room",
+        "advantage": "1 twin bed, breakfast available",
+        "room_picture": "62b331e8899a4c0c17c6531d",
+        "created_at": "2022-06-22T15:14:48.546Z",
+        "updated_at": "2022-06-22T15:14:48.546Z"
+      },
+      {
+        "price": 40,
+        "_id": "62b33261899a4c0c17c65323",
+        "title": "Double Room",
+        "advantage": "1 full bed, breakfast available",
+        "room_picture": "62b33261899a4c0c17c65321",
+        "created_at": "2022-06-22T15:16:49.668Z",
+        "updated_at": "2022-06-22T15:16:49.668Z"
+      },
+      {
+        "price": 25,
+        "_id": "62b332d3899a4c0c17c65327",
+        "title": "Standard Twin Room",
+        "advantage": "1 twin bed",
+        "room_picture": "62b332d3899a4c0c17c65325",
+        "created_at": "2022-06-22T15:18:43.136Z",
+        "updated_at": "2022-06-22T15:18:43.136Z"
+      }
+    ],
+    "_id": "62b331a9899a4c0c17c6531c",
+    "name": "Grand Hôtel Amelot",
+    "city": "Paris",
+    "country": "France",
+    "short_address": "11th arr.",
+    "address": "54 rue Amelot, 11th arr., 75011 Paris, France",
+    "location": "Chemin vert station is within 200m",
+    "type": "Single Room - Double Room - Standard Twin Room",
+    "main_picture": "62b331a9899a4c0c17c65318",
+    "second_picture": "62b331a9899a4c0c17c65319"
+  },
+  {
+    "rating": 4,
+    "rooms": [
+      {
+        "price": 45,
+        "_id": "62b32700899a4c0c17c65312",
+        "title": "Single Room",
+        "advantage": "1 twin bed or full bed",
+        "room_picture": "62b32700899a4c0c17c65310",
+        "created_at": "2022-06-22T14:28:16.658Z",
+        "updated_at": "2022-06-22T14:28:16.658Z"
+      },
+      {
+        "price": 48,
+        "_id": "62b32f9e899a4c0c17c65316",
+        "title": "Double Room",
+        "advantage": " full bed",
+        "room_picture": "62b32f9e899a4c0c17c65314",
+        "created_at": "2022-06-22T15:05:02.492Z",
+        "updated_at": "2022-06-22T15:05:02.492Z"
+      }
+    ],
+    "_id": "62b326c5899a4c0c17c6530f",
+    "name": "Austin's Saint Lazare Hotel",
+    "city": "Paris",
+    "country": "France",
+    "short_address": "9th arr.",
+    "address": "26 Rue d'Amsterdam, 9e arr., 75009 Paris, France ",
+    "location": "Saint-Lazare station is within 150m",
+    "type": "Single Room - Double Room - Twin Room",
+    "main_picture": "62b326c5899a4c0c17c6530b",
+    "second_picture": "62b326c5899a4c0c17c6530c"
+  },
+  {
+    "rating": 4,
+    "rooms": [
+      {
+        "price": 55,
+        "_id": "62b32337899a4c0c17c65305",
+        "title": "Classic Double Room",
+        "advantage": "1 large double bed",
+        "room_picture": "62b32337899a4c0c17c65303",
+        "created_at": "2022-06-22T14:12:07.563Z",
+        "updated_at": "2022-06-22T14:12:07.563Z"
+      },
+      {
+        "price": 60,
+        "_id": "62b323db899a4c0c17c65309",
+        "title": "Superior Double Room",
+        "advantage": "1 large double bed, breakfast availible",
+        "room_picture": "62b323db899a4c0c17c65307",
+        "created_at": "2022-06-22T14:14:51.745Z",
+        "updated_at": "2022-06-22T14:14:51.745Z"
+      }
+    ],
+    "_id": "62b3226c899a4c0c17c65302",
+    "name": "Westside Arc de Triomphe Hotel",
+    "city": "Paris",
+    "country": "France",
+    "short_address": "17th arr.",
+    "address": "36 rue Pierre Demours, 17e arr., 75017 Paris",
+    "location": "500m from Perreira metro station",
+    "type": "Classic Double Room",
+    "main_picture": "62b3226b899a4c0c17c652fe",
+    "second_picture": "62b3226b899a4c0c17c652ff"
+  },
+  {
+    "rating": 3,
+    "rooms": [
+      {
+        "price": 109,
+        "_id": "61850c99872dbbc3b8797b66",
+        "title": "Classic Double Room - Countyard View",
+        "advantage": "Breakfast availible, pay at the property.",
+        "room_picture": "61850c99872dbbc3b8797b64",
+        "created_at": "2021-11-05T10:51:05.235Z",
+        "updated_at": "2021-11-05T10:51:05.235Z"
+      },
+      {
+        "price": 119,
+        "_id": "61850cca872dbbc3b8797b69",
+        "title": "Classic Double Room - Street View",
+        "advantage": "Breakfast availible, pay at the property.",
+        "room_picture": "61850cca872dbbc3b8797b67",
+        "created_at": "2021-11-05T10:51:54.320Z",
+        "updated_at": "2021-11-05T10:51:54.320Z"
+      }
+    ],
+    "_id": "61850c6a872dbbc3b8797b63",
+    "name": "Hôtel Le Relais Saint Charles",
+    "short_address": "15th arr., 4,4 km from centre",
+    "address": "72 Boulevard de Granelle, 15th arr., Paris, 75015 France",
+    "location": "50 m from Metro / tube station (Dupleix)",
+    "type": "Classic Double Room - Street View",
+    "city": "Paris",
+    "country": "France",
+    "main_picture": "61850c6a872dbbc3b8797b5f",
+    "second_picture": "61850c6a872dbbc3b8797b60"
+  }
+]

@@ -7,6 +7,7 @@ import Popover, {
   PopoverPlacement,
   PopoverMode,
 } from 'react-native-popover-view';
+import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {useDispatch} from 'react-redux';
 import {IUser} from '../models';
@@ -14,15 +15,13 @@ import {emptyUser} from '../models/user';
 import {saveAccount} from '../redux/actions';
 import {FormMessages} from '../utils/actionTypes';
 
-type Props = {
-  navigation: NativeStackNavigationProp<any>;
-};
-const Account: React.FC<Props> = props => {
+const Account: React.FC<Props> = () => {
   let lastnameRef: any = null,
     emailRef: any = null,
     passwordRef: any = null,
     phoneRef: any = null;
 
+  const navigation = useNavigation();
   const dispatch = useDispatch();
   const [user, setUser] = useState(emptyUser);
   const [selectedField, setSelectedField] = useState('');
@@ -237,7 +236,7 @@ const Account: React.FC<Props> = props => {
   };
 
   const _onSave = () => {
-    dispatch(saveAccount(user, props.navigation));
+    dispatch(saveAccount(user));
   };
 
   return (
@@ -545,7 +544,7 @@ const Account: React.FC<Props> = props => {
             Already have an account?
             <Text
               style={styles.loginTextStyles}
-              onPress={() => props.navigation.navigate('Login')}>
+              onPress={() => navigation.navigate('Login')}>
               {' '}
               Login
             </Text>

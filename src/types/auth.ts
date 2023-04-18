@@ -11,10 +11,10 @@ export interface AuthState {
 }
 
 export interface FetchRequestPayload {
-  fetching: true;
-  success: false;
-  error: false;
-  message: '';
+  fetching: boolean;
+  success: boolean;
+  error: boolean;
+  message: string;
 }
 
 export interface FetchRequestSuccessPayload {
@@ -29,7 +29,7 @@ export interface FetchRequestFailurePayload {
 }
 
 export interface checkUserSuccess {
-  user: IUser;
+  user: IUser | null;
   isLoggedIn: boolean;
 }
 
@@ -101,7 +101,13 @@ export type setDefaultCardsPayload = {
   payload: setDefaultCard;
 };
 
+export type notActionPayload = {
+  type: '';
+  payload: null;
+};
+
 export type authActions =
+  | notActionPayload
   | FetchRequest
   | FetchRequestSuccess
   | FetchRequestFailure

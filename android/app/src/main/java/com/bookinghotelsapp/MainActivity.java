@@ -1,6 +1,10 @@
 package com.bookinghotelsapp;
 import android.os.Bundle;
+import org.devio.rn.splashscreen.SplashScreen;
+import android.os.Bundle;
 import com.facebook.react.ReactActivity;
+import org.devio.rn.splashscreen.SplashScreen;
+
 
 public class MainActivity extends ReactActivity {
 
@@ -15,6 +19,8 @@ public class MainActivity extends ReactActivity {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(null);
+      SplashScreen.show(this);
+      super.onCreate(null);
+      // SplashScreen.show(this, R.style.SplashScreenTheme);  
   }
 }

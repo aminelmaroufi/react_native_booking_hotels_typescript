@@ -223,7 +223,6 @@ const Book: React.FC<Props> = props => {
   const _setDefaultCard = (card: ISecureCard) => {
     dispatch(setDefaultCard(card));
   };
-
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.qst}> When would you like to pay? </Text>

@@ -8,31 +8,38 @@ function* get_hotels(action: any) {
   try {
     yield put({type: ActionTypes.API_CALL_REQUEST});
     let response: AxiosResponse = yield call(getHotels, action.params);
-    const data = response.data;
 
-    if (data.ok) {
-      yield all([
-        put({
-          type: ActionTypes.API_CALL_SUCCESS,
-        }),
-        put({
-          type: ActionTypes.SET_HOTELS,
-          payload: {
-            hotels: data.result.hotels,
-            total: data.result.total,
-            pages: data.result.pages,
-            page: data.result.page,
-            limit: data.result.limit,
-          },
-        }),
-      ]);
-    } else {
+    if (!response) {
       yield put({
-        type: ActionTypes.API_CALL_FAILURE,
-        payload: {
-          message: data.result.message,
-        },
+        type: ActionTypes.API_CALL_SUCCESS,
       });
+    } else {
+      const data = response.data;
+
+      if (data.ok) {
+        yield all([
+          put({
+            type: ActionTypes.API_CALL_SUCCESS,
+          }),
+          put({
+            type: ActionTypes.SET_HOTELS,
+            payload: {
+              hotels: data.result.hotels,
+              total: data.result.total,
+              pages: data.result.pages,
+              page: data.result.page,
+              limit: data.result.limit,
+            },
+          }),
+        ]);
+      } else {
+        yield put({
+          type: ActionTypes.API_CALL_FAILURE,
+          payload: {
+            message: data.result.message,
+          },
+        });
+      }
     }
   } catch (err: any) {
     yield put({

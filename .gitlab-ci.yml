@@ -1,0 +1,41 @@
+# image: node:latest
+
+# before_script:
+#   - apt-get update -qy
+#   - apt-get install -y ruby-dev
+#   - gem install dpl
+
+# stages:
+#   - production
+
+# production:
+#   stage: production
+#   image: ruby:latest
+#   script:
+#     - dpl --provider=heroku --app=$HEROKU_APP_NAME --api-key=$HEROKU_API_KEY
+#   only:
+#     - production
+
+default:
+  image: node:latest
+
+stages:
+  - test
+
+unit-tests:
+  image: node:latest
+  stage: test
+  only:
+    - master
+  before_script:
+    - npm install
+  script:
+    - npm run test:ci
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+  artifacts:
+    paths:
+      - coverage/
+    when: always
+    reports:
+      junit:
+        - junit.xml

@@ -1,16 +1,17 @@
 // import ActionTypes from '../utils/actionTypes';
 import {put, call, all, takeLatest} from 'redux-saga/effects';
 import ActionTypes from '../../utils/actionTypes';
+import {CommonActions} from '@react-navigation/native';
 import {checkUser, saveAccount, login} from '../../api';
 import {AxiosResponse} from 'axios';
+import {navigateToScreen} from '../../redux/actions';
 import * as RootNavigation from '../../navigation/rootNavigation';
 
-function* check_user_request() {
+export function* check_user_request() {
   try {
     yield put({type: ActionTypes.API_CALL_REQUEST});
     let response: AxiosResponse = yield call(checkUser);
     const data = response.data;
-
     if (data.ok) {
       if (data.result.user) {
         yield all([
@@ -47,7 +48,7 @@ function* check_user_request() {
   }
 }
 
-function* save_account(action: any) {
+export function* save_account(action: any) {
   try {
     yield put({type: ActionTypes.API_CALL_REQUEST});
     let user = action.account;
@@ -69,9 +70,11 @@ function* save_account(action: any) {
             user: data.result.user,
           },
         }),
+        put(CommonActions.goBack()),
+        put(CommonActions.navigate({name: 'Login'})),
       ]);
-      action.navigation.pop();
-      RootNavigation.navigate('Login', {});
+      // action.navigation.pop();
+      // RootNavigation.navigate('Login', {});
     } else {
       yield put({
         type: ActionTypes.API_CALL_FAILURE,
@@ -90,7 +93,7 @@ function* save_account(action: any) {
   }
 }
 
-function* login_request(action: any) {
+export function* login_request(action: any) {
   try {
     yield put({type: ActionTypes.API_CALL_REQUEST});
     let response: AxiosResponse = yield call(
@@ -111,8 +114,9 @@ function* login_request(action: any) {
             user: data.result.user,
           },
         }),
+        put(navigateToScreen('Overview', {})),
       ]);
-      action.navigation.pop(2);
+      // action.navigation.pop(2);
       RootNavigation.navigate('Overview', {});
     } else {
       yield put({

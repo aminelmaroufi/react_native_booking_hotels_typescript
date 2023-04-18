@@ -24,7 +24,7 @@ export default function reducer(state = initialState, action: authActions) {
       return {
         ...state,
         fetching: false,
-        // success: true,
+        success: true,
       };
     case ActionTypes.API_CALL_FAILURE:
       return {

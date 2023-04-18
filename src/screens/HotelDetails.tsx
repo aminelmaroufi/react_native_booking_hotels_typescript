@@ -5,24 +5,23 @@ import {useDispatch, useSelector} from 'react-redux';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {Rating, Button} from 'react-native-elements';
 import Moment from 'moment';
+import {useNavigation} from '@react-navigation/native';
 import {RootState} from '../redux/reducers';
 import {IBook} from '../models';
 import {baseURL} from '../config/config';
 import {updateReservation} from '../redux/actions';
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
 type Props = {
   book: IBook;
-  navigation: NativeStackNavigationProp<any>;
 };
 
 const HotelDetails: React.FC<Props> = props => {
+  const navigation = useNavigation();
   const dispatch = useDispatch();
-  const bookState: RootState = useSelector((state: RootState) => state.book);
-  const book: IBook = bookState.book;
+  const {book} = useSelector((state: RootState) => state.book);
 
   useEffect(() => {
-    props.navigation.setOptions({title: `${book.hotel.name}`});
+    navigation.setOptions({title: `${book.hotel.name}`});
   });
 
   const _pickDate = (type: string, value: Date) => {
@@ -68,7 +67,7 @@ const HotelDetails: React.FC<Props> = props => {
         {cancelable: false},
       );
     } else {
-      props.navigation.navigate('CHECK_ROOMS');
+      navigation.navigate('CHECK_ROOMS');
     }
   };
 

@@ -28,7 +28,7 @@ unit-tests:
   only:
     - master
   before_script:
-    - npm install
+    - npm install --legacy-peer-deps
   script:
     - npm run test:ci
   coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/

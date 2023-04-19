@@ -31,7 +31,6 @@ unit-tests:
     - npm install --legacy-peer-deps
   script:
     - npm run test:ci
-  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
-   artifacts:
+  artifacts:
     reports:
       junit: test-results/*.xml

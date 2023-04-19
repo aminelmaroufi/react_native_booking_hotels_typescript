@@ -4,7 +4,7 @@ import {cleanup, fireEvent, screen} from '@testing-library/react-native';
 import configureStore from '../../redux/store';
 import Login from '../Login';
 import {loginRequest} from '../../redux/actions';
-import Setup from '../setup';
+import Setup from '../Setup';
 
 let store = configureStore();
 

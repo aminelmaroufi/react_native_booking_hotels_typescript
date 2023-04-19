@@ -5,7 +5,7 @@ import {cleanup, screen} from '@testing-library/react-native';
 import Home from '../Home';
 import {getHotels} from '../../redux/actions';
 import hotels_response from './fixtures/hotels_response.json';
-import Setup from '../setup';
+import Setup from '../Setup';
 
 let mockStore = configureStore();
 

@@ -32,10 +32,6 @@ unit-tests:
   script:
     - npm run test:ci
   coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
-  artifacts:
-    paths:
-      - coverage/
-    when: always
+   artifacts:
     reports:
-      junit:
-        - junit.xml
+      junit: test-results/*.xml

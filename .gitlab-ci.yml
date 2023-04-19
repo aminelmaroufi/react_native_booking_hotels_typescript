@@ -32,5 +32,6 @@ unit-tests:
   script:
     - npm run test:ci
   artifacts:
-    reports:
-      junit: test-results/*.xml
+    paths:
+      - coverage/
+      - test-results/

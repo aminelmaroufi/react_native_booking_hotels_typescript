@@ -7,7 +7,7 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest --watch",
-    "test:ci": "jest",
+    "test:ci": "jest -- --testResultsProcessor=\"jest-junit\" --watchAll=false --ci --coverage",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {

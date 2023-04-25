@@ -1,0 +1,65 @@
+ca2066daa6cdeea85848e5ec389bdc0f
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
+var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
+var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
+var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
+var _react = _interopRequireDefault(require("react"));
+var _extractGradient = _interopRequireDefault(require("../lib/extract/extractGradient"));
+var _Shape2 = _interopRequireDefault(require("./Shape"));
+var _NativeComponents = require("./NativeComponents");
+var _jsxFileName = "/Users/horcrux/Work/react-native-svg/src/elements/RadialGradient.tsx";
+var RadialGradient = function (_Shape) {
+  (0, _inherits2.default)(RadialGradient, _Shape);
+  function RadialGradient() {
+    (0, _classCallCheck2.default)(this, RadialGradient);
+    return (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(RadialGradient).apply(this, arguments));
+  }
+  (0, _createClass2.default)(RadialGradient, [{
+    key: "render",
+    value: function render() {
+      var props = this.props;
+      var rx = props.rx,
+        ry = props.ry,
+        r = props.r,
+        cx = props.cx,
+        cy = props.cy,
+        _props$fx = props.fx,
+        fx = _props$fx === void 0 ? cx : _props$fx,
+        _props$fy = props.fy,
+        fy = _props$fy === void 0 ? cy : _props$fy;
+      return _react.default.createElement(_NativeComponents.RNSVGRadialGradient, (0, _extends2.default)({
+        ref: this.refMethod,
+        fx: fx,
+        fy: fy,
+        rx: rx || r,
+        ry: ry || r,
+        cx: cx,
+        cy: cy
+      }, (0, _extractGradient.default)(props, this), {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 33
+        }
+      }));
+    }
+  }]);
+  return RadialGradient;
+}(_Shape2.default);
+exports.default = RadialGradient;
+(0, _defineProperty2.default)(RadialGradient, "displayName", 'RadialGradient');
+(0, _defineProperty2.default)(RadialGradient, "defaultProps", {
+  cx: '50%',
+  cy: '50%',
+  r: '50%'
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJfcmVhY3QiLCJfaW50ZXJvcFJlcXVpcmVEZWZhdWx0IiwicmVxdWlyZSIsIl9leHRyYWN0R3JhZGllbnQiLCJfU2hhcGUyIiwiX05hdGl2ZUNvbXBvbmVudHMiLCJSYWRpYWxHcmFkaWVudCIsInByb3BzIiwicngiLCJyeSIsInIiLCJjeCIsImN5IiwiX3Byb3BzJGZ4IiwiZngiLCJfcHJvcHMkZnkiLCJmeSIsImRlZmF1bHQiLCJjcmVhdGVFbGVtZW50IiwiUk5TVkdSYWRpYWxHcmFkaWVudCIsIl9leHRlbmRzMiIsInJlZiIsInJlZk1ldGhvZCIsIl9fc291cmNlIiwiZmlsZU5hbWUiLCJfanN4RmlsZU5hbWUiLCJsaW5lTnVtYmVyIl0sInNvdXJjZXMiOlsiUmFkaWFsR3JhZGllbnQudHN4Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCwgeyBSZWFjdEVsZW1lbnQgfSBmcm9tICdyZWFjdCc7XG5pbXBvcnQgZXh0cmFjdEdyYWRpZW50IGZyb20gJy4uL2xpYi9leHRyYWN0L2V4dHJhY3RHcmFkaWVudCc7XG5pbXBvcnQgeyBOdW1iZXJQcm9wLCBUcmFuc2Zvcm1Qcm9wcyB9IGZyb20gJy4uL2xpYi9leHRyYWN0L3R5cGVzJztcbmltcG9ydCBTaGFwZSBmcm9tICcuL1NoYXBlJztcbmltcG9ydCB7IFJOU1ZHUmFkaWFsR3JhZGllbnQgfSBmcm9tICcuL05hdGl2ZUNvbXBvbmVudHMnO1xuXG5leHBvcnQgZGVmYXVsdCBjbGFzcyBSYWRpYWxHcmFkaWVudCBleHRlbmRzIFNoYXBlPHtcbiAgZng/OiBOdW1iZXJQcm9wO1xuICBmeT86IE51bWJlclByb3A7XG4gIHJ4PzogTnVtYmVyUHJvcDtcbiAgcnk/OiBOdW1iZXJQcm9wO1xuICByPzogTnVtYmVyUHJvcDtcbiAgY3g/OiBOdW1iZXJQcm9wO1xuICBjeT86IE51bWJlclByb3A7XG4gIGlkPzogc3RyaW5nO1xuICBjaGlsZHJlbj86IFJlYWN0RWxlbWVudFtdO1xuICB0cmFuc2Zvcm0/OiBudW1iZXJbXSB8IHN0cmluZyB8IFRyYW5zZm9ybVByb3BzO1xuICBncmFkaWVudFRyYW5zZm9ybT86IG51bWJlcltdIHwgc3RyaW5nIHwgVHJhbnNmb3JtUHJvcHM7XG4gIGdyYWRpZW50VW5pdHM/OiAnb2JqZWN0Qm91bmRpbmdCb3gnIHwgJ3VzZXJTcGFjZU9uVXNlJztcbn0+IHtcbiAgc3RhdGljIGRpc3BsYXlOYW1lID0gJ1JhZGlhbEdyYWRpZW50JztcblxuICBzdGF0aWMgZGVmYXVsdFByb3BzID0ge1xuICAgIGN4OiAnNTAlJyxcbiAgICBjeTogJzUwJScsXG4gICAgcjogJzUwJScsXG4gIH07XG5cbiAgcmVuZGVyKCkge1xuICAgIGNvbnN0IHsgcHJvcHMgfSA9IHRoaXM7XG4gICAgY29uc3QgeyByeCwgcnksIHIsIGN4LCBjeSwgZnggPSBjeCwgZnkgPSBjeSB9ID0gcHJvcHM7XG4gICAgcmV0dXJuIChcbiAgICAgIDxSTlNWR1JhZGlhbEdyYWRpZW50XG4gICAgICAgIHJlZj17dGhpcy5yZWZNZXRob2R9XG4gICAgICAgIGZ4PXtmeH1cbiAgICAgICAgZnk9e2Z5fVxuICAgICAgICByeD17cnggfHwgcn1cbiAgICAgICAgcnk9e3J5IHx8IHJ9XG4gICAgICAgIGN4PXtjeH1cbiAgICAgICAgY3k9e2N5fVxuICAgICAgICB7Li4uZXh0cmFjdEdyYWRpZW50KHByb3BzLCB0aGlzKX1cbiAgICAgIC8+XG4gICAgKTtcbiAgfVxufVxuIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7OztBQUFBLElBQUFBLE1BQUEsR0FBQUMsc0JBQUEsQ0FBQUMsT0FBQTtBQUNBLElBQUFDLGdCQUFBLEdBQUFGLHNCQUFBLENBQUFDLE9BQUE7QUFFQSxJQUFBRSxPQUFBLEdBQUFILHNCQUFBLENBQUFDLE9BQUE7QUFDQSxJQUFBRyxpQkFBQSxHQUFBSCxPQUFBOztJQUVxQkksYzs7Ozs7Ozs7NkJBc0JWO01BQUEsSUFDQ0MsS0FERCxHQUNXLElBRFgsQ0FDQ0EsS0FERDtNQUFBLElBRUNDLEVBRkQsR0FFeUNELEtBRnpDLENBRUNDLEVBRkQ7UUFFS0MsRUFGTCxHQUV5Q0YsS0FGekMsQ0FFS0UsRUFGTDtRQUVTQyxDQUZULEdBRXlDSCxLQUZ6QyxDQUVTRyxDQUZUO1FBRVlDLEVBRlosR0FFeUNKLEtBRnpDLENBRVlJLEVBRlo7UUFFZ0JDLEVBRmhCLEdBRXlDTCxLQUZ6QyxDQUVnQkssRUFGaEI7UUFBQUMsU0FBQSxHQUV5Q04sS0FGekMsQ0FFb0JPLEVBRnBCO1FBRW9CQSxFQUZwQixHQUFBRCxTQUFBLGNBRXlCRixFQUZ6QixHQUFBRSxTQUFBO1FBQUFFLFNBQUEsR0FFeUNSLEtBRnpDLENBRTZCUyxFQUY3QjtRQUU2QkEsRUFGN0IsR0FBQUQsU0FBQSxjQUVrQ0gsRUFGbEMsR0FBQUcsU0FBQTtNQUdQLE9BQ0VmLE1BQUEsQ0FBQWlCLE9BQUEsQ0FBQUMsYUFBQSxDQUFDYixpQkFBQSxDQUFBYyxtQkFBRCxNQUFBQyxTQUFBLENBQUFILE9BQUE7UUFDRUksR0FBRyxFQUFFLEtBQUtDLFNBRFo7UUFFRVIsRUFBRSxFQUFFQSxFQUZOO1FBR0VFLEVBQUUsRUFBRUEsRUFITjtRQUlFUixFQUFFLEVBQUVBLEVBQUUsSUFBSUUsQ0FKWjtRQUtFRCxFQUFFLEVBQUVBLEVBQUUsSUFBSUMsQ0FMWjtRQU1FQyxFQUFFLEVBQUVBLEVBTk47UUFPRUMsRUFBRSxFQUFFQTtNQVBOLEdBUU0sSUFBQVQsZ0JBQUEsQ0FBQWMsT0FBQSxFQUFnQlYsS0FBaEIsRUFBdUIsSUFBdkIsQ0FSTjtRQUFBZ0IsUUFBQTtVQUFBQyxRQUFBLEVBQUFDLFlBQUE7VUFBQUMsVUFBQTtRQUFBO01BQUEsR0FERjtJQVlEOzs7RUFyQ3lDdEIsT0FBQSxDQUFBYSxPOzs4QkFBdkJYLGMsaUJBY0UsZ0I7OEJBZEZBLGMsa0JBZ0JHO0VBQ3BCSyxFQUFFLEVBQUUsS0FEZ0I7RUFFcEJDLEVBQUUsRUFBRSxLQUZnQjtFQUdwQkYsQ0FBQyxFQUFFO0FBSGlCLEMifQ==

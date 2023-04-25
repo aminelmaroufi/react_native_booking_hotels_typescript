@@ -1,0 +1,56 @@
+8b3c9bdcaaeb7438eb9b03566a5d9201
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
+var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
+var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
+var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
+var _react = _interopRequireDefault(require("react"));
+var _extractProps = require("../lib/extract/extractProps");
+var _Shape2 = _interopRequireDefault(require("./Shape"));
+var _NativeComponents = require("./NativeComponents");
+var _jsxFileName = "/Users/horcrux/Work/react-native-svg/src/elements/Circle.tsx";
+var Circle = function (_Shape) {
+  (0, _inherits2.default)(Circle, _Shape);
+  function Circle() {
+    (0, _classCallCheck2.default)(this, Circle);
+    return (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(Circle).apply(this, arguments));
+  }
+  (0, _createClass2.default)(Circle, [{
+    key: "render",
+    value: function render() {
+      var props = this.props;
+      var cx = props.cx,
+        cy = props.cy,
+        r = props.r;
+      return _react.default.createElement(_NativeComponents.RNSVGCircle, (0, _extends2.default)({
+        ref: this.refMethod
+      }, (0, _extractProps.extract)(this, props), {
+        cx: cx,
+        cy: cy,
+        r: r,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 24
+        }
+      }));
+    }
+  }]);
+  return Circle;
+}(_Shape2.default);
+exports.default = Circle;
+(0, _defineProperty2.default)(Circle, "displayName", 'Circle');
+(0, _defineProperty2.default)(Circle, "defaultProps", {
+  cx: 0,
+  cy: 0,
+  r: 0
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJfcmVhY3QiLCJfaW50ZXJvcFJlcXVpcmVEZWZhdWx0IiwicmVxdWlyZSIsIl9leHRyYWN0UHJvcHMiLCJfU2hhcGUyIiwiX05hdGl2ZUNvbXBvbmVudHMiLCJDaXJjbGUiLCJwcm9wcyIsImN4IiwiY3kiLCJyIiwiZGVmYXVsdCIsImNyZWF0ZUVsZW1lbnQiLCJSTlNWR0NpcmNsZSIsIl9leHRlbmRzMiIsInJlZiIsInJlZk1ldGhvZCIsImV4dHJhY3QiLCJfX3NvdXJjZSIsImZpbGVOYW1lIiwiX2pzeEZpbGVOYW1lIiwibGluZU51bWJlciJdLCJzb3VyY2VzIjpbIkNpcmNsZS50c3giXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCB7IGV4dHJhY3QgfSBmcm9tICcuLi9saWIvZXh0cmFjdC9leHRyYWN0UHJvcHMnO1xuaW1wb3J0IHsgTnVtYmVyUHJvcCB9IGZyb20gJy4uL2xpYi9leHRyYWN0L3R5cGVzJztcbmltcG9ydCBTaGFwZSBmcm9tICcuL1NoYXBlJztcbmltcG9ydCB7IFJOU1ZHQ2lyY2xlIH0gZnJvbSAnLi9OYXRpdmVDb21wb25lbnRzJztcblxuZXhwb3J0IGRlZmF1bHQgY2xhc3MgQ2lyY2xlIGV4dGVuZHMgU2hhcGU8e1xuICBjeD86IE51bWJlclByb3A7XG4gIGN5PzogTnVtYmVyUHJvcDtcbiAgcj86IE51bWJlclByb3A7XG59PiB7XG4gIHN0YXRpYyBkaXNwbGF5TmFtZSA9ICdDaXJjbGUnO1xuXG4gIHN0YXRpYyBkZWZhdWx0UHJvcHMgPSB7XG4gICAgY3g6IDAsXG4gICAgY3k6IDAsXG4gICAgcjogMCxcbiAgfTtcblxuICByZW5kZXIoKSB7XG4gICAgY29uc3QgeyBwcm9wcyB9ID0gdGhpcztcbiAgICBjb25zdCB7IGN4LCBjeSwgciB9ID0gcHJvcHM7XG4gICAgcmV0dXJuIChcbiAgICAgIDxSTlNWR0NpcmNsZVxuICAgICAgICByZWY9e3RoaXMucmVmTWV0aG9kfVxuICAgICAgICB7Li4uZXh0cmFjdCh0aGlzLCBwcm9wcyl9XG4gICAgICAgIGN4PXtjeH1cbiAgICAgICAgY3k9e2N5fVxuICAgICAgICByPXtyfVxuICAgICAgLz5cbiAgICApO1xuICB9XG59XG4iXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7O0FBQUEsSUFBQUEsTUFBQSxHQUFBQyxzQkFBQSxDQUFBQyxPQUFBO0FBQ0EsSUFBQUMsYUFBQSxHQUFBRCxPQUFBO0FBRUEsSUFBQUUsT0FBQSxHQUFBSCxzQkFBQSxDQUFBQyxPQUFBO0FBQ0EsSUFBQUcsaUJBQUEsR0FBQUgsT0FBQTs7SUFFcUJJLE07Ozs7Ozs7OzZCQWFWO01BQUEsSUFDQ0MsS0FERCxHQUNXLElBRFgsQ0FDQ0EsS0FERDtNQUFBLElBRUNDLEVBRkQsR0FFZUQsS0FGZixDQUVDQyxFQUZEO1FBRUtDLEVBRkwsR0FFZUYsS0FGZixDQUVLRSxFQUZMO1FBRVNDLENBRlQsR0FFZUgsS0FGZixDQUVTRyxDQUZUO01BR1AsT0FDRVYsTUFBQSxDQUFBVyxPQUFBLENBQUFDLGFBQUEsQ0FBQ1AsaUJBQUEsQ0FBQVEsV0FBRCxNQUFBQyxTQUFBLENBQUFILE9BQUE7UUFDRUksR0FBRyxFQUFFLEtBQUtDO01BRFosR0FFTSxJQUFBYixhQUFBLENBQUFjLE9BQUEsRUFBUSxJQUFSLEVBQWNWLEtBQWQsQ0FGTjtRQUdFQyxFQUFFLEVBQUVBLEVBSE47UUFJRUMsRUFBRSxFQUFFQSxFQUpOO1FBS0VDLENBQUMsRUFBRUEsQ0FMTDtRQUFBUSxRQUFBO1VBQUFDLFFBQUEsRUFBQUMsWUFBQTtVQUFBQyxVQUFBO1FBQUE7TUFBQSxHQURGO0lBU0Q7OztFQXpCaUNqQixPQUFBLENBQUFPLE87OzhCQUFmTCxNLGlCQUtFLFE7OEJBTEZBLE0sa0JBT0c7RUFDcEJFLEVBQUUsRUFBRSxDQURnQjtFQUVwQkMsRUFBRSxFQUFFLENBRmdCO0VBR3BCQyxDQUFDLEVBQUU7QUFIaUIsQyJ9

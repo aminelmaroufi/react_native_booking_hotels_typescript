@@ -1,0 +1,45 @@
+4bf770a74535865aef5f265f6ddbecf4
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
+var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
+var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
+var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
+var _react = _interopRequireDefault(require("react"));
+var _extractProps = require("../lib/extract/extractProps");
+var _Shape2 = _interopRequireDefault(require("./Shape"));
+var _NativeComponents = require("./NativeComponents");
+var _jsxFileName = "/Users/horcrux/Work/react-native-svg/src/elements/ClipPath.tsx";
+var ClipPath = function (_Shape) {
+  (0, _inherits2.default)(ClipPath, _Shape);
+  function ClipPath() {
+    (0, _classCallCheck2.default)(this, ClipPath);
+    return (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(ClipPath).apply(this, arguments));
+  }
+  (0, _createClass2.default)(ClipPath, [{
+    key: "render",
+    value: function render() {
+      var props = this.props;
+      return _react.default.createElement(_NativeComponents.RNSVGClipPath, (0, _extends2.default)({
+        ref: this.refMethod
+      }, (0, _extractProps.extract)(this, props), {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 12
+        }
+      }), props.children);
+    }
+  }]);
+  return ClipPath;
+}(_Shape2.default);
+exports.default = ClipPath;
+(0, _defineProperty2.default)(ClipPath, "displayName", 'ClipPath');
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJfcmVhY3QiLCJfaW50ZXJvcFJlcXVpcmVEZWZhdWx0IiwicmVxdWlyZSIsIl9leHRyYWN0UHJvcHMiLCJfU2hhcGUyIiwiX05hdGl2ZUNvbXBvbmVudHMiLCJDbGlwUGF0aCIsInByb3BzIiwiZGVmYXVsdCIsImNyZWF0ZUVsZW1lbnQiLCJSTlNWR0NsaXBQYXRoIiwiX2V4dGVuZHMyIiwicmVmIiwicmVmTWV0aG9kIiwiZXh0cmFjdCIsIl9fc291cmNlIiwiZmlsZU5hbWUiLCJfanN4RmlsZU5hbWUiLCJsaW5lTnVtYmVyIiwiY2hpbGRyZW4iXSwic291cmNlcyI6WyJDbGlwUGF0aC50c3giXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCB7IGV4dHJhY3QgfSBmcm9tICcuLi9saWIvZXh0cmFjdC9leHRyYWN0UHJvcHMnO1xuaW1wb3J0IFNoYXBlIGZyb20gJy4vU2hhcGUnO1xuaW1wb3J0IHsgUk5TVkdDbGlwUGF0aCB9IGZyb20gJy4vTmF0aXZlQ29tcG9uZW50cyc7XG5cbmV4cG9ydCBkZWZhdWx0IGNsYXNzIENsaXBQYXRoIGV4dGVuZHMgU2hhcGU8e30+IHtcbiAgc3RhdGljIGRpc3BsYXlOYW1lID0gJ0NsaXBQYXRoJztcblxuICByZW5kZXIoKSB7XG4gICAgY29uc3QgeyBwcm9wcyB9ID0gdGhpcztcbiAgICByZXR1cm4gKFxuICAgICAgPFJOU1ZHQ2xpcFBhdGggcmVmPXt0aGlzLnJlZk1ldGhvZH0gey4uLmV4dHJhY3QodGhpcywgcHJvcHMpfT5cbiAgICAgICAge3Byb3BzLmNoaWxkcmVufVxuICAgICAgPC9STlNWR0NsaXBQYXRoPlxuICAgICk7XG4gIH1cbn1cbiJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7QUFBQSxJQUFBQSxNQUFBLEdBQUFDLHNCQUFBLENBQUFDLE9BQUE7QUFDQSxJQUFBQyxhQUFBLEdBQUFELE9BQUE7QUFDQSxJQUFBRSxPQUFBLEdBQUFILHNCQUFBLENBQUFDLE9BQUE7QUFDQSxJQUFBRyxpQkFBQSxHQUFBSCxPQUFBOztJQUVxQkksUTs7Ozs7Ozs7NkJBR1Y7TUFBQSxJQUNDQyxLQURELEdBQ1csSUFEWCxDQUNDQSxLQUREO01BRVAsT0FDRVAsTUFBQSxDQUFBUSxPQUFBLENBQUFDLGFBQUEsQ0FBQ0osaUJBQUEsQ0FBQUssYUFBRCxNQUFBQyxTQUFBLENBQUFILE9BQUE7UUFBZUksR0FBRyxFQUFFLEtBQUtDO01BQXpCLEdBQXdDLElBQUFWLGFBQUEsQ0FBQVcsT0FBQSxFQUFRLElBQVIsRUFBY1AsS0FBZCxDQUF4QztRQUFBUSxRQUFBO1VBQUFDLFFBQUEsRUFBQUMsWUFBQTtVQUFBQyxVQUFBO1FBQUE7TUFBQSxJQUNHWCxLQUFLLENBQUNZLFFBRFQsQ0FERjtJQUtEOzs7RUFWbUNmLE9BQUEsQ0FBQUksTzs7OEJBQWpCRixRLGlCQUNFLFUifQ==

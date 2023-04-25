@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="21" failures="0" errors="0" time="5.962">
+  <testsuite name="Test auth reducer" errors="0" failures="0" skipped="0" timestamp="2023-04-25T12:54:58" time="1.739" tests="8">
+    <testcase classname="Test auth reducer should return the initial state when state is undefined" name="Test auth reducer should return the initial state when state is undefined" time="0.003">
+    </testcase>
+    <testcase classname="Test auth reducer should handle the &apos;API_CALL_REQUEST&apos; action" name="Test auth reducer should handle the &apos;API_CALL_REQUEST&apos; action" time="0.002">
+    </testcase>
+    <testcase classname="Test auth reducer should handle the &apos;API_CALL_SUCCESS&apos; action" name="Test auth reducer should handle the &apos;API_CALL_SUCCESS&apos; action" time="0">
+    </testcase>
+    <testcase classname="Test auth reducer should handle the &apos;API_CALL_FAILURE&apos; action" name="Test auth reducer should handle the &apos;API_CALL_FAILURE&apos; action" time="0.001">
+    </testcase>
+    <testcase classname="Test auth reducer should handle the &apos;SUCCESS_OPERATION&apos; action" name="Test auth reducer should handle the &apos;SUCCESS_OPERATION&apos; action" time="0.001">
+    </testcase>
+    <testcase classname="Test auth reducer should handle the &apos;CHECK_USER_SUCCESS&apos; action for logged user" name="Test auth reducer should handle the &apos;CHECK_USER_SUCCESS&apos; action for logged user" time="0">
+    </testcase>
+    <testcase classname="Test auth reducer should handle the &apos;CHECK_USER_SUCCESS&apos; action for guest user" name="Test auth reducer should handle the &apos;CHECK_USER_SUCCESS&apos; action for guest user" time="0">
+    </testcase>
+    <testcase classname="Test auth reducer should handle the &apos;LOGIN_SUCCESS&apos; action" name="Test auth reducer should handle the &apos;LOGIN_SUCCESS&apos; action" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="Test auth actions" errors="0" failures="0" skipped="0" timestamp="2023-04-25T12:54:58" time="1.949" tests="3">
+    <testcase classname="Test auth actions should dispatch checkUser action" name="Test auth actions should dispatch checkUser action" time="0.002">
+    </testcase>
+    <testcase classname="Test auth actions should dispatch loginRequest action with the correct params" name="Test auth actions should dispatch loginRequest action with the correct params" time="0.001">
+    </testcase>
+    <testcase classname="Test auth actions should dispatch saveAccount action with the correct params" name="Test auth actions should dispatch saveAccount action with the correct params" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="Test watchAuthRequest sagas" errors="0" failures="0" skipped="0" timestamp="2023-04-25T12:54:58" time="2.212" tests="10">
+    <testcase classname="Test watchAuthRequest sagas should call &apos;all&apos; with the correct functions" name="Test watchAuthRequest sagas should call &apos;all&apos; with the correct functions" time="0.006">
+    </testcase>
+    <testcase classname="Test watchAuthRequest sagas Test check_user_request saga should call api and dispatch success action" name="Test watchAuthRequest sagas Test check_user_request saga should call api and dispatch success action" time="0.004">
+    </testcase>
+    <testcase classname="Test watchAuthRequest sagas Test check_user_request saga should check_user_request saga disptach failure from the server" name="Test watchAuthRequest sagas Test check_user_request saga should check_user_request saga disptach failure from the server" time="0.001">
+    </testcase>
+    <testcase classname="Test watchAuthRequest sagas Test check_user_request saga should check_user_request saga disptach failure" name="Test watchAuthRequest sagas Test check_user_request saga should check_user_request saga disptach failure" time="0.002">
+    </testcase>
+    <testcase classname="Test watchAuthRequest sagas Test login_request saga should call api and dispatch success action" name="Test watchAuthRequest sagas Test login_request saga should call api and dispatch success action" time="0.002">
+    </testcase>
+    <testcase classname="Test watchAuthRequest sagas Test login_request saga should login_request saga disptach failure from the server" name="Test watchAuthRequest sagas Test login_request saga should login_request saga disptach failure from the server" time="0.002">
+    </testcase>
+    <testcase classname="Test watchAuthRequest sagas Test login_request saga should login_request saga disptach failure" name="Test watchAuthRequest sagas Test login_request saga should login_request saga disptach failure" time="0.001">
+    </testcase>
+    <testcase classname="Test watchAuthRequest sagas Test save_account saga should call api and dispatch success action" name="Test watchAuthRequest sagas Test save_account saga should call api and dispatch success action" time="0.001">
+    </testcase>
+    <testcase classname="Test watchAuthRequest sagas Test save_account saga should login_request saga disptach failure from the server" name="Test watchAuthRequest sagas Test save_account saga should login_request saga disptach failure from the server" time="0.001">
+    </testcase>
+    <testcase classname="Test watchAuthRequest sagas Test save_account saga should login_request saga disptach failure" name="Test watchAuthRequest sagas Test save_account saga should login_request saga disptach failure" time="0.001">
+    </testcase>
+  </testsuite>
+</testsuites>

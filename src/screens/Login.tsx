@@ -15,7 +15,7 @@ import {RootState} from '../redux/reducers';
 import {loginRequest} from '../redux/actions';
 import {LoginFormMessages} from '../utils/actionTypes';
 
-const Login: React.FC<Props> = () => {
+const Login: React.FC = () => {
   let passwordRef: any = null;
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');

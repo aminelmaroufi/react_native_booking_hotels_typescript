@@ -49,12 +49,13 @@ const App = () => {
 
   return (
     <ApplicationProvider {...eva} theme={isDarkMode ? eva.dark : eva.light}>
+      <RootNavigation ref={navigationRef} />
       {fetching && (
         <Layout style={styles.spinnerLayout}>
           <Spinner status={'control'} size={'large'} />
         </Layout>
       )}
-      <RootNavigation ref={navigationRef} />
+
       {(error || success) && (
         <DropdownAlert ref={ref => (dropDownAlertRef = ref)} />
       )}
@@ -65,16 +66,16 @@ const App = () => {
 const styles = StyleSheet.create({
   spinnerLayout: {
     flex: 1,
-    justifyContent: 'center',
-    alignContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#2756a1',
     position: 'absolute',
     top: 0,
     bottom: 0,
     left: 0,
     right: 0,
-    zIndex: 999,
+    justifyContent: 'center',
+    alignContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#2756a1',
+    zIndex: 9999,
     opacity: 0.4,
   },
 });

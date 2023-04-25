@@ -1,0 +1,45 @@
+f3852ee7ddb5d597bd263de227914b8f
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _react = _interopRequireDefault(require("react"));
+var _getIconType = _interopRequireDefault(require("../helpers/getIconType"));
+var CheckBoxIcon = function CheckBoxIcon(_ref) {
+  var checked = _ref.checked,
+    onIconPress = _ref.onIconPress,
+    onLongIconPress = _ref.onLongIconPress,
+    _ref$size = _ref.size,
+    size = _ref$size === void 0 ? 24 : _ref$size,
+    _ref$checkedIcon = _ref.checkedIcon,
+    checkedIcon = _ref$checkedIcon === void 0 ? 'check-square-o' : _ref$checkedIcon,
+    _ref$uncheckedIcon = _ref.uncheckedIcon,
+    uncheckedIcon = _ref$uncheckedIcon === void 0 ? 'square-o' : _ref$uncheckedIcon,
+    iconType = _ref.iconType,
+    checkedColor = _ref.checkedColor,
+    _ref$uncheckedColor = _ref.uncheckedColor,
+    uncheckedColor = _ref$uncheckedColor === void 0 ? '#bfbfbf' : _ref$uncheckedColor;
+  if (checked && _react.default.isValidElement(checkedIcon)) {
+    return checkedIcon;
+  }
+  if (!checked && _react.default.isValidElement(uncheckedIcon)) {
+    return uncheckedIcon;
+  }
+  var VectorIcon = iconType ? (0, _getIconType.default)(iconType) : (0, _getIconType.default)('font-awesome');
+  return _react.default.createElement(VectorIcon, {
+    color: checked ? checkedColor : uncheckedColor,
+    name: checked ? checkedIcon : uncheckedIcon,
+    size: size || 24,
+    style: {
+      minWidth: size || 24
+    },
+    onLongPress: onLongIconPress,
+    onPress: onIconPress
+  });
+};
+var _default = CheckBoxIcon;
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJfcmVhY3QiLCJfaW50ZXJvcFJlcXVpcmVEZWZhdWx0IiwicmVxdWlyZSIsIl9nZXRJY29uVHlwZSIsIkNoZWNrQm94SWNvbiIsIl9yZWYiLCJjaGVja2VkIiwib25JY29uUHJlc3MiLCJvbkxvbmdJY29uUHJlc3MiLCJfcmVmJHNpemUiLCJzaXplIiwiX3JlZiRjaGVja2VkSWNvbiIsImNoZWNrZWRJY29uIiwiX3JlZiR1bmNoZWNrZWRJY29uIiwidW5jaGVja2VkSWNvbiIsImljb25UeXBlIiwiY2hlY2tlZENvbG9yIiwiX3JlZiR1bmNoZWNrZWRDb2xvciIsInVuY2hlY2tlZENvbG9yIiwiUmVhY3QiLCJpc1ZhbGlkRWxlbWVudCIsIlZlY3Rvckljb24iLCJnZXRJY29uVHlwZSIsImRlZmF1bHQiLCJjcmVhdGVFbGVtZW50IiwiY29sb3IiLCJuYW1lIiwic3R5bGUiLCJtaW5XaWR0aCIsIm9uTG9uZ1ByZXNzIiwib25QcmVzcyIsIl9kZWZhdWx0IiwiZXhwb3J0cyJdLCJzb3VyY2VzIjpbIkNoZWNrQm94SWNvbi5qcyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xuaW1wb3J0IGdldEljb25UeXBlIGZyb20gJy4uL2hlbHBlcnMvZ2V0SWNvblR5cGUnO1xuY29uc3QgQ2hlY2tCb3hJY29uID0gKHsgY2hlY2tlZCwgb25JY29uUHJlc3MsIG9uTG9uZ0ljb25QcmVzcywgc2l6ZSA9IDI0LCBjaGVja2VkSWNvbiA9ICdjaGVjay1zcXVhcmUtbycsIHVuY2hlY2tlZEljb24gPSAnc3F1YXJlLW8nLCBpY29uVHlwZSwgY2hlY2tlZENvbG9yLCB1bmNoZWNrZWRDb2xvciA9ICcjYmZiZmJmJywgfSkgPT4ge1xuICAgIGlmIChjaGVja2VkICYmIFJlYWN0LmlzVmFsaWRFbGVtZW50KGNoZWNrZWRJY29uKSkge1xuICAgICAgICByZXR1cm4gY2hlY2tlZEljb247XG4gICAgfVxuICAgIGlmICghY2hlY2tlZCAmJiBSZWFjdC5pc1ZhbGlkRWxlbWVudCh1bmNoZWNrZWRJY29uKSkge1xuICAgICAgICByZXR1cm4gdW5jaGVja2VkSWNvbjtcbiAgICB9XG4gICAgY29uc3QgVmVjdG9ySWNvbiA9IGljb25UeXBlXG4gICAgICAgID8gZ2V0SWNvblR5cGUoaWNvblR5cGUpXG4gICAgICAgIDogZ2V0SWNvblR5cGUoJ2ZvbnQtYXdlc29tZScpO1xuICAgIHJldHVybiAoPFZlY3Rvckljb24gY29sb3I9e2NoZWNrZWQgPyBjaGVja2VkQ29sb3IgOiB1bmNoZWNrZWRDb2xvcn0gbmFtZT17Y2hlY2tlZCA/IGNoZWNrZWRJY29uIDogdW5jaGVja2VkSWNvbn0gc2l6ZT17c2l6ZSB8fCAyNH0gc3R5bGU9e3sgbWluV2lkdGg6IHNpemUgfHwgMjQgfX0gb25Mb25nUHJlc3M9e29uTG9uZ0ljb25QcmVzc30gb25QcmVzcz17b25JY29uUHJlc3N9Lz4pO1xufTtcbmV4cG9ydCBkZWZhdWx0IENoZWNrQm94SWNvbjtcbiJdLCJtYXBwaW5ncyI6Ijs7Ozs7OztBQUFBLElBQUFBLE1BQUEsR0FBQUMsc0JBQUEsQ0FBQUMsT0FBQTtBQUNBLElBQUFDLFlBQUEsR0FBQUYsc0JBQUEsQ0FBQUMsT0FBQTtBQUNBLElBQU1FLFlBQVksR0FBRyxTQUFmQSxZQUFZQSxDQUFBQyxJQUFBLEVBQThLO0VBQUEsSUFBeEtDLE9BQU8sR0FBQUQsSUFBQSxDQUFQQyxPQUFPO0lBQUVDLFdBQVcsR0FBQUYsSUFBQSxDQUFYRSxXQUFXO0lBQUVDLGVBQWUsR0FBQUgsSUFBQSxDQUFmRyxlQUFlO0lBQUFDLFNBQUEsR0FBQUosSUFBQSxDQUFFSyxJQUFJO0lBQUpBLElBQUksR0FBQUQsU0FBQSxjQUFHLEVBQUUsR0FBQUEsU0FBQTtJQUFBRSxnQkFBQSxHQUFBTixJQUFBLENBQUVPLFdBQVc7SUFBWEEsV0FBVyxHQUFBRCxnQkFBQSxjQUFHLGdCQUFnQixHQUFBQSxnQkFBQTtJQUFBRSxrQkFBQSxHQUFBUixJQUFBLENBQUVTLGFBQWE7SUFBYkEsYUFBYSxHQUFBRCxrQkFBQSxjQUFHLFVBQVUsR0FBQUEsa0JBQUE7SUFBRUUsUUFBUSxHQUFBVixJQUFBLENBQVJVLFFBQVE7SUFBRUMsWUFBWSxHQUFBWCxJQUFBLENBQVpXLFlBQVk7SUFBQUMsbUJBQUEsR0FBQVosSUFBQSxDQUFFYSxjQUFjO0lBQWRBLGNBQWMsR0FBQUQsbUJBQUEsY0FBRyxTQUFTLEdBQUFBLG1CQUFBO0VBQ3BMLElBQUlYLE9BQU8sSUFBSWEsY0FBSyxDQUFDQyxjQUFjLENBQUNSLFdBQVcsQ0FBQyxFQUFFO0lBQzlDLE9BQU9BLFdBQVc7RUFDdEI7RUFDQSxJQUFJLENBQUNOLE9BQU8sSUFBSWEsY0FBSyxDQUFDQyxjQUFjLENBQUNOLGFBQWEsQ0FBQyxFQUFFO0lBQ2pELE9BQU9BLGFBQWE7RUFDeEI7RUFDQSxJQUFNTyxVQUFVLEdBQUdOLFFBQVEsR0FDckIsSUFBQU8sb0JBQVcsRUFBQ1AsUUFBUSxDQUFDLEdBQ3JCLElBQUFPLG9CQUFXLEVBQUMsY0FBYyxDQUFDO0VBQ2pDLE9BQVF0QixNQUFBLENBQUF1QixPQUFBLENBQUFDLGFBQUEsQ0FBQ0gsVUFBVTtJQUFDSSxLQUFLLEVBQUVuQixPQUFPLEdBQUdVLFlBQVksR0FBR0UsY0FBZTtJQUFDUSxJQUFJLEVBQUVwQixPQUFPLEdBQUdNLFdBQVcsR0FBR0UsYUFBYztJQUFDSixJQUFJLEVBQUVBLElBQUksSUFBSSxFQUFHO0lBQUNpQixLQUFLLEVBQUU7TUFBRUMsUUFBUSxFQUFFbEIsSUFBSSxJQUFJO0lBQUcsQ0FBRTtJQUFDbUIsV0FBVyxFQUFFckIsZUFBZ0I7SUFBQ3NCLE9BQU8sRUFBRXZCO0VBQVksRUFBRTtBQUM3TixDQUFDO0FBQUMsSUFBQXdCLFFBQUEsR0FDYTNCLFlBQVk7QUFBQTRCLE9BQUEsQ0FBQVQsT0FBQSxHQUFBUSxRQUFBIn0=

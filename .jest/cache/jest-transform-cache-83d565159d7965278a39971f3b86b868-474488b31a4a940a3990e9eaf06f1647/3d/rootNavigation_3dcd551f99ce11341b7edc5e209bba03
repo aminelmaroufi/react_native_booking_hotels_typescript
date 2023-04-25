@@ -1,0 +1,51 @@
+9dd64d2353a7e856263e4f5e505b79ff
+"use strict";
+
+var __createBinding = void 0 && (void 0).__createBinding || (Object.create ? function (o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+  Object.defineProperty(o, k2, desc);
+} : function (o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  o[k2] = m[k];
+});
+var __setModuleDefault = void 0 && (void 0).__setModuleDefault || (Object.create ? function (o, v) {
+  Object.defineProperty(o, "default", {
+    enumerable: true,
+    value: v
+  });
+} : function (o, v) {
+  o["default"] = v;
+});
+var __importStar = void 0 && (void 0).__importStar || function (mod) {
+  if (mod && mod.__esModule) return mod;
+  var result = {};
+  if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+  __setModuleDefault(result, mod);
+  return result;
+};
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.pop = exports.navigate = exports.navigationRef = void 0;
+var React = __importStar(require("react"));
+exports.navigationRef = React.createRef();
+var navigate = function navigate(name, params) {
+  var _a;
+  (_a = exports.navigationRef.current) === null || _a === void 0 ? void 0 : _a.navigate(name, params);
+};
+exports.navigate = navigate;
+var pop = function pop(n) {
+  var _a;
+  (_a = exports.navigationRef.current) === null || _a === void 0 ? void 0 : _a.pop(n);
+};
+exports.pop = pop;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJSZWFjdCIsIl9faW1wb3J0U3RhciIsInJlcXVpcmUiLCJleHBvcnRzIiwibmF2aWdhdGlvblJlZiIsImNyZWF0ZVJlZiIsIm5hdmlnYXRlIiwibmFtZSIsInBhcmFtcyIsIl9hIiwiY3VycmVudCIsInBvcCIsIm4iXSwic291cmNlcyI6WyIvVXNlcnMvQW1pbmUvRGVza3RvcC9wcm9qZWN0cy9Cb29raW5nSG90ZWxzQXBwL3NyYy9uYXZpZ2F0aW9uL3Jvb3ROYXZpZ2F0aW9uLnRzIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCAqIGFzIFJlYWN0IGZyb20gJ3JlYWN0JztcblxuZXhwb3J0IGNvbnN0IG5hdmlnYXRpb25SZWY6IFJlYWN0LlJlZjxhbnk+ID0gUmVhY3QuY3JlYXRlUmVmKCk7XG5cbmV4cG9ydCBjb25zdCBuYXZpZ2F0ZSA9IChuYW1lOiBzdHJpbmcsIHBhcmFtczogb2JqZWN0KSA9PiB7XG4gIG5hdmlnYXRpb25SZWYuY3VycmVudD8ubmF2aWdhdGUobmFtZSwgcGFyYW1zKTtcbn07XG5cbmV4cG9ydCBjb25zdCBwb3AgPSAobjogbnVtYmVyKSA9PiB7XG4gIG5hdmlnYXRpb25SZWYuY3VycmVudD8ucG9wKG4pO1xufTtcbiJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBLElBQUFBLEtBQUEsR0FBQUMsWUFBQSxDQUFBQyxPQUFBO0FBRWFDLE9BQUEsQ0FBQUMsYUFBYSxHQUFtQkosS0FBSyxDQUFDSyxTQUFTLEVBQUU7QUFFdkQsSUFBTUMsUUFBUSxHQUFHLFNBQVhBLFFBQVFBLENBQUlDLElBQVksRUFBRUMsTUFBYyxFQUFJOztFQUN2RCxDQUFBQyxFQUFBLEdBQUFOLE9BQUEsQ0FBQUMsYUFBYSxDQUFDTSxPQUFPLGNBQUFELEVBQUEsdUJBQUFBLEVBQUEsQ0FBRUgsUUFBUSxDQUFDQyxJQUFJLEVBQUVDLE1BQU0sQ0FBQztBQUMvQyxDQUFDO0FBRllMLE9BQUEsQ0FBQUcsUUFBUSxHQUFBQSxRQUFBO0FBSWQsSUFBTUssR0FBRyxHQUFHLFNBQU5BLEdBQUdBLENBQUlDLENBQVMsRUFBSTs7RUFDL0IsQ0FBQUgsRUFBQSxHQUFBTixPQUFBLENBQUFDLGFBQWEsQ0FBQ00sT0FBTyxjQUFBRCxFQUFBLHVCQUFBQSxFQUFBLENBQUVFLEdBQUcsQ0FBQ0MsQ0FBQyxDQUFDO0FBQy9CLENBQUM7QUFGWVQsT0FBQSxDQUFBUSxHQUFHLEdBQUFBLEdBQUEifQ==

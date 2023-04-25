@@ -1,0 +1,117 @@
+e39e1b02bc986a9f4ca2a1b5167b5de8
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "addCard", {
+  enumerable: true,
+  get: function get() {
+    return _book.addCard;
+  }
+});
+Object.defineProperty(exports, "checkUser", {
+  enumerable: true,
+  get: function get() {
+    return _auth.checkUser;
+  }
+});
+Object.defineProperty(exports, "createBooking", {
+  enumerable: true,
+  get: function get() {
+    return _book.createBooking;
+  }
+});
+Object.defineProperty(exports, "getBookings", {
+  enumerable: true,
+  get: function get() {
+    return _book.getBookings;
+  }
+});
+Object.defineProperty(exports, "getHotels", {
+  enumerable: true,
+  get: function get() {
+    return _book.getHotels;
+  }
+});
+Object.defineProperty(exports, "getMoreHotels", {
+  enumerable: true,
+  get: function get() {
+    return _book.getMoreHotels;
+  }
+});
+Object.defineProperty(exports, "loginRequest", {
+  enumerable: true,
+  get: function get() {
+    return _auth.loginRequest;
+  }
+});
+Object.defineProperty(exports, "navigateToScreen", {
+  enumerable: true,
+  get: function get() {
+    return _navigation.navigateToScreen;
+  }
+});
+Object.defineProperty(exports, "saveAccount", {
+  enumerable: true,
+  get: function get() {
+    return _auth.saveAccount;
+  }
+});
+Object.defineProperty(exports, "selectHotel", {
+  enumerable: true,
+  get: function get() {
+    return _book.selectHotel;
+  }
+});
+Object.defineProperty(exports, "setDefaultCard", {
+  enumerable: true,
+  get: function get() {
+    return _book.setDefaultCard;
+  }
+});
+Object.defineProperty(exports, "updateReservation", {
+  enumerable: true,
+  get: function get() {
+    return _book.updateReservation;
+  }
+});
+Object.defineProperty(exports, "updateUserFields", {
+  enumerable: true,
+  get: function get() {
+    return _auth.updateUserFields;
+  }
+});
+var _book = require("./book");
+var _auth = require("./auth");
+var _navigation = require("./navigation");
+function cov_10iwxvohd6() {
+  var path = "/Users/Amine/Desktop/projects/BookingHotelsApp/src/redux/actions/index.ts";
+  var hash = "5713078679fcf5622605490bee2375baaf731ea2";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/Amine/Desktop/projects/BookingHotelsApp/src/redux/actions/index.ts",
+    statementMap: {},
+    fnMap: {},
+    branchMap: {},
+    s: {},
+    f: {},
+    b: {},
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "5713078679fcf5622605490bee2375baaf731ea2"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+  var actualCoverage = coverage[path];
+  {
+    cov_10iwxvohd6 = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+cov_10iwxvohd6();
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJfYm9vayIsInJlcXVpcmUiLCJfYXV0aCIsIl9uYXZpZ2F0aW9uIiwiY292XzEwaXd4dm9oZDYiLCJwYXRoIiwiaGFzaCIsImdsb2JhbCIsIkZ1bmN0aW9uIiwiZ2N2IiwiY292ZXJhZ2VEYXRhIiwic3RhdGVtZW50TWFwIiwiZm5NYXAiLCJicmFuY2hNYXAiLCJzIiwiZiIsImIiLCJfY292ZXJhZ2VTY2hlbWEiLCJjb3ZlcmFnZSIsImFjdHVhbENvdmVyYWdlIl0sInNvdXJjZXMiOlsiaW5kZXgudHMiXSwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IHtcbiAgZ2V0SG90ZWxzLFxuICBnZXRNb3JlSG90ZWxzLFxuICBzZWxlY3RIb3RlbCxcbiAgdXBkYXRlUmVzZXJ2YXRpb24sXG4gIGFkZENhcmQsXG4gIHNldERlZmF1bHRDYXJkLFxuICBjcmVhdGVCb29raW5nLFxuICBnZXRCb29raW5ncyxcbn0gZnJvbSAnLi9ib29rJztcbmV4cG9ydCB7Y2hlY2tVc2VyLCB1cGRhdGVVc2VyRmllbGRzLCBzYXZlQWNjb3VudCwgbG9naW5SZXF1ZXN0fSBmcm9tICcuL2F1dGgnO1xuZXhwb3J0IHtuYXZpZ2F0ZVRvU2NyZWVufSBmcm9tICcuL25hdmlnYXRpb24nO1xuIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBLElBQUFBLEtBQUEsR0FBQUMsT0FBQTtBQVVBLElBQUFDLEtBQUEsR0FBQUQsT0FBQTtBQUNBLElBQUFFLFdBQUEsR0FBQUYsT0FBQTtBQUE4QyxTQUFBRyxlQUFBO0VBQUEsSUFBQUMsSUFBQTtFQUFBLElBQUFDLElBQUE7RUFBQSxJQUFBQyxNQUFBLE9BQUFDLFFBQUE7RUFBQSxJQUFBQyxHQUFBO0VBQUEsSUFBQUMsWUFBQTtJQUFBTCxJQUFBO0lBQUFNLFlBQUE7SUFBQUMsS0FBQTtJQUFBQyxTQUFBO0lBQUFDLENBQUE7SUFBQUMsQ0FBQTtJQUFBQyxDQUFBO0lBQUFDLGVBQUE7SUFBQVgsSUFBQTtFQUFBO0VBQUEsSUFBQVksUUFBQSxHQUFBWCxNQUFBLENBQUFFLEdBQUEsTUFBQUYsTUFBQSxDQUFBRSxHQUFBO0VBQUEsS0FBQVMsUUFBQSxDQUFBYixJQUFBLEtBQUFhLFFBQUEsQ0FBQWIsSUFBQSxFQUFBQyxJQUFBLEtBQUFBLElBQUE7SUFBQVksUUFBQSxDQUFBYixJQUFBLElBQUFLLFlBQUE7RUFBQTtFQUFBLElBQUFTLGNBQUEsR0FBQUQsUUFBQSxDQUFBYixJQUFBO0VBQUE7SUFBQUQsY0FBQSxZQUFBQSxDQUFBO01BQUEsT0FBQWUsY0FBQTtJQUFBO0VBQUE7RUFBQSxPQUFBQSxjQUFBO0FBQUE7QUFBQWYsY0FBQSJ9

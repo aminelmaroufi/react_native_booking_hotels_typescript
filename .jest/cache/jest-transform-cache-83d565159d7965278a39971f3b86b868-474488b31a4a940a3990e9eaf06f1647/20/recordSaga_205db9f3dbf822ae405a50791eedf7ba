@@ -1,0 +1,60 @@
+2f4f80f1e74a2b21f432654e47b5371c
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
+var __awaiter = void 0 && (void 0).__awaiter || function (thisArg, _arguments, P, generator) {
+  function adopt(value) {
+    return value instanceof P ? value : new P(function (resolve) {
+      resolve(value);
+    });
+  }
+  return new (P || (P = Promise))(function (resolve, reject) {
+    function fulfilled(value) {
+      try {
+        step(generator.next(value));
+      } catch (e) {
+        reject(e);
+      }
+    }
+    function rejected(value) {
+      try {
+        step(generator["throw"](value));
+      } catch (e) {
+        reject(e);
+      }
+    }
+    function step(result) {
+      result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
+    }
+    step((generator = generator.apply(thisArg, _arguments || [])).next());
+  });
+};
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var redux_saga_1 = require("redux-saga");
+function recordSaga(saga, initialAction) {
+  return __awaiter(this, void 0, void 0, _regenerator.default.mark(function _callee() {
+    var dispatched;
+    return _regenerator.default.wrap(function _callee$(_context) {
+      while (1) switch (_context.prev = _context.next) {
+        case 0:
+          dispatched = [];
+          _context.next = 3;
+          return (0, redux_saga_1.runSaga)({
+            dispatch: function dispatch(action) {
+              return dispatched.push(action);
+            }
+          }, saga, initialAction);
+        case 3:
+          return _context.abrupt("return", dispatched);
+        case 4:
+        case "end":
+          return _context.stop();
+      }
+    }, _callee);
+  }));
+}
+exports.default = recordSaga;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJyZWR1eF9zYWdhXzEiLCJyZXF1aXJlIiwicmVjb3JkU2FnYSIsInNhZ2EiLCJpbml0aWFsQWN0aW9uIiwiZGlzcGF0Y2hlZCIsIl9jb250ZXh0IiwibmV4dCIsInJ1blNhZ2EiLCJkaXNwYXRjaCIsImFjdGlvbiIsInB1c2giLCJhYnJ1cHQiLCJzdG9wIiwiX2NhbGxlZSIsImV4cG9ydHMiLCJkZWZhdWx0Il0sInNvdXJjZXMiOlsiL1VzZXJzL0FtaW5lL0Rlc2t0b3AvcHJvamVjdHMvQm9va2luZ0hvdGVsc0FwcC9zcmMvcmVkdXgvc2FnYXMvcmVjb3JkU2FnYS50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQge3J1blNhZ2F9IGZyb20gJ3JlZHV4LXNhZ2EnO1xuXG5hc3luYyBmdW5jdGlvbiByZWNvcmRTYWdhKHNhZ2E6IGFueSwgaW5pdGlhbEFjdGlvbjogYW55KSB7XG4gIGNvbnN0IGRpc3BhdGNoZWQ6IEFycmF5PGFueT4gPSBbXTtcblxuICBhd2FpdCBydW5TYWdhKFxuICAgIHtcbiAgICAgIGRpc3BhdGNoOiBhY3Rpb24gPT4gZGlzcGF0Y2hlZC5wdXNoKGFjdGlvbiksXG4gICAgfSxcbiAgICBzYWdhLFxuICAgIGluaXRpYWxBY3Rpb24sXG4gICk7XG5cbiAgcmV0dXJuIGRpc3BhdGNoZWQ7XG59XG5cbmV4cG9ydCBkZWZhdWx0IHJlY29yZFNhZ2E7XG4iXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQSxJQUFBQSxZQUFBLEdBQUFDLE9BQUE7QUFFQSxTQUFlQyxVQUFVQSxDQUFDQyxJQUFTLEVBQUVDLGFBQWtCOzs7Ozs7VUFDL0NDLFVBQVUsR0FBZSxFQUFFO1VBQUFDLFFBQUEsQ0FBQUMsSUFBQTtVQUVqQyxPQUFNLElBQUFQLFlBQUEsQ0FBQVEsT0FBTyxFQUNYO1lBQ0VDLFFBQVEsRUFBRSxTQUFBQSxTQUFBQyxNQUFNO2NBQUEsT0FBSUwsVUFBVSxDQUFDTSxJQUFJLENBQUNELE1BQU0sQ0FBQztZQUFBO1dBQzVDLEVBQ0RQLElBQUksRUFDSkMsYUFBYSxDQUNkO1FBQUE7VUFBQSxPQUFBRSxRQUFBLENBQUFNLE1BQUEsV0FFTVAsVUFBVTtRQUFBO1FBQUE7VUFBQSxPQUFBQyxRQUFBLENBQUFPLElBQUE7TUFBQTtJQUFBLEdBQUFDLE9BQUE7RUFBQSxDQUNsQjs7QUFFREMsT0FBQSxDQUFBQyxPQUFBLEdBQWVkLFVBQVUifQ==

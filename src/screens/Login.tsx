@@ -9,9 +9,7 @@ import {
 import {Layout, Input} from '@ui-kitten/components';
 import {Button} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {useDispatch} from 'react-redux';
-import {RootState} from '../redux/reducers';
 import {loginRequest} from '../redux/actions';
 import {LoginFormMessages} from '../utils/actionTypes';
 

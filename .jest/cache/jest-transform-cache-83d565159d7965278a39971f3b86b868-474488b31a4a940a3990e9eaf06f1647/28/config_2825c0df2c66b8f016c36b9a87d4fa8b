@@ -1,0 +1,10 @@
+f7c31fc69060e85da914e784171c55e3
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.baseURL = void 0;
+var baseURL = 'https://bookingapi-app.onrender.com/api/v1';
+exports.baseURL = baseURL;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJiYXNlVVJMIiwiZXhwb3J0cyJdLCJzb3VyY2VzIjpbImNvbmZpZy50cyJdLCJzb3VyY2VzQ29udGVudCI6WyIvLyBleHBvcnQgY29uc3QgQVBJX1VSTCA9ICdodHRwOi8vbG9jYWxob3N0OjMwMDAvYXBpL3YxJztcbi8vIGV4cG9ydCBjb25zdCBiYXNlVVJMID0gJ2h0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvdjEnO1xuXG4vL1BST0RcbmV4cG9ydCBjb25zdCBiYXNlVVJMID0gJ2h0dHBzOi8vYm9va2luZ2FwaS1hcHAub25yZW5kZXIuY29tL2FwaS92MSc7XG4iXSwibWFwcGluZ3MiOiI7Ozs7OztBQUlPLElBQU1BLE9BQU8sR0FBRyw0Q0FBNEM7QUFBQ0MsT0FBQSxDQUFBRCxPQUFBLEdBQUFBLE9BQUEifQ==

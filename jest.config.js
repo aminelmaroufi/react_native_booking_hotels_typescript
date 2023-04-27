@@ -4,7 +4,7 @@ module.exports = {
   ...tsjPreset,
   preset: 'react-native',
   transform: {
-    '^.+\\.tsx?$': 'babel-jest',
+    '^.+\\.(ts|tsx)$': 'babel-jest',
   },
   globals: {
     'ts-jest': {

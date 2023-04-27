@@ -1,0 +1,48 @@
+3d82ccb9799a4f60aa948a1a6ba3bc84
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
+var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
+var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
+var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
+var _react = _interopRequireDefault(require("react"));
+var _extractViewBox = _interopRequireDefault(require("../lib/extract/extractViewBox"));
+var _Shape2 = _interopRequireDefault(require("./Shape"));
+var _NativeComponents = require("./NativeComponents");
+var _jsxFileName = "/Users/horcrux/Work/react-native-svg/src/elements/Symbol.tsx";
+var Symbol = function (_Shape) {
+  (0, _inherits2.default)(Symbol, _Shape);
+  function Symbol() {
+    (0, _classCallCheck2.default)(this, Symbol);
+    return (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(Symbol).apply(this, arguments));
+  }
+  (0, _createClass2.default)(Symbol, [{
+    key: "render",
+    value: function render() {
+      var props = this.props;
+      var id = props.id,
+        children = props.children;
+      return _react.default.createElement(_NativeComponents.RNSVGSymbol, (0, _extends2.default)({
+        ref: this.refMethod,
+        name: id
+      }, (0, _extractViewBox.default)(props), {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 17
+        }
+      }), children);
+    }
+  }]);
+  return Symbol;
+}(_Shape2.default);
+exports.default = Symbol;
+(0, _defineProperty2.default)(Symbol, "displayName", 'Symbol');
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJfcmVhY3QiLCJfaW50ZXJvcFJlcXVpcmVEZWZhdWx0IiwicmVxdWlyZSIsIl9leHRyYWN0Vmlld0JveCIsIl9TaGFwZTIiLCJfTmF0aXZlQ29tcG9uZW50cyIsIlN5bWJvbCIsInByb3BzIiwiaWQiLCJjaGlsZHJlbiIsImRlZmF1bHQiLCJjcmVhdGVFbGVtZW50IiwiUk5TVkdTeW1ib2wiLCJfZXh0ZW5kczIiLCJyZWYiLCJyZWZNZXRob2QiLCJuYW1lIiwiX19zb3VyY2UiLCJmaWxlTmFtZSIsIl9qc3hGaWxlTmFtZSIsImxpbmVOdW1iZXIiXSwic291cmNlcyI6WyJTeW1ib2wudHN4Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCc7XG5pbXBvcnQgZXh0cmFjdFZpZXdCb3ggZnJvbSAnLi4vbGliL2V4dHJhY3QvZXh0cmFjdFZpZXdCb3gnO1xuaW1wb3J0IFNoYXBlIGZyb20gJy4vU2hhcGUnO1xuaW1wb3J0IHsgUk5TVkdTeW1ib2wgfSBmcm9tICcuL05hdGl2ZUNvbXBvbmVudHMnO1xuXG5leHBvcnQgZGVmYXVsdCBjbGFzcyBTeW1ib2wgZXh0ZW5kcyBTaGFwZTx7XG4gIGlkPzogc3RyaW5nO1xuICB2aWV3Qm94Pzogc3RyaW5nO1xuICBwcmVzZXJ2ZUFzcGVjdFJhdGlvPzogc3RyaW5nO1xufT4ge1xuICBzdGF0aWMgZGlzcGxheU5hbWUgPSAnU3ltYm9sJztcblxuICByZW5kZXIoKSB7XG4gICAgY29uc3QgeyBwcm9wcyB9ID0gdGhpcztcbiAgICBjb25zdCB7IGlkLCBjaGlsZHJlbiB9ID0gcHJvcHM7XG4gICAgcmV0dXJuIChcbiAgICAgIDxSTlNWR1N5bWJvbCByZWY9e3RoaXMucmVmTWV0aG9kfSBuYW1lPXtpZH0gey4uLmV4dHJhY3RWaWV3Qm94KHByb3BzKX0+XG4gICAgICAgIHtjaGlsZHJlbn1cbiAgICAgIDwvUk5TVkdTeW1ib2w+XG4gICAgKTtcbiAgfVxufVxuIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7OztBQUFBLElBQUFBLE1BQUEsR0FBQUMsc0JBQUEsQ0FBQUMsT0FBQTtBQUNBLElBQUFDLGVBQUEsR0FBQUYsc0JBQUEsQ0FBQUMsT0FBQTtBQUNBLElBQUFFLE9BQUEsR0FBQUgsc0JBQUEsQ0FBQUMsT0FBQTtBQUNBLElBQUFHLGlCQUFBLEdBQUFILE9BQUE7O0lBRXFCSSxNOzs7Ozs7Ozs2QkFPVjtNQUFBLElBQ0NDLEtBREQsR0FDVyxJQURYLENBQ0NBLEtBREQ7TUFBQSxJQUVDQyxFQUZELEdBRWtCRCxLQUZsQixDQUVDQyxFQUZEO1FBRUtDLFFBRkwsR0FFa0JGLEtBRmxCLENBRUtFLFFBRkw7TUFHUCxPQUNFVCxNQUFBLENBQUFVLE9BQUEsQ0FBQUMsYUFBQSxDQUFDTixpQkFBQSxDQUFBTyxXQUFELE1BQUFDLFNBQUEsQ0FBQUgsT0FBQTtRQUFhSSxHQUFHLEVBQUUsS0FBS0MsU0FBdkI7UUFBa0NDLElBQUksRUFBRVI7TUFBeEMsR0FBZ0QsSUFBQUwsZUFBQSxDQUFBTyxPQUFBLEVBQWVILEtBQWYsQ0FBaEQ7UUFBQVUsUUFBQTtVQUFBQyxRQUFBLEVBQUFDLFlBQUE7VUFBQUMsVUFBQTtRQUFBO01BQUEsSUFDR1gsUUFESCxDQURGO0lBS0Q7OztFQWZpQ0wsT0FBQSxDQUFBTSxPOzs4QkFBZkosTSxpQkFLRSxRIn0=

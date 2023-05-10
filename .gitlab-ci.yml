@@ -28,7 +28,7 @@ unit-tests:
   only:
     - master
   before_script:
-    - npm install --legacy-peer-deps
+    - npm install
   script:
     - npm run test:ci
   artifacts:

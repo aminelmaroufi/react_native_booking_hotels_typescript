@@ -4,23 +4,24 @@ module.exports = {
   ...tsjPreset,
   preset: 'react-native',
   transform: {
-    '^.+\\.(ts|tsx)$': 'babel-jest',
+    '\\.[jt]sx?$': 'babel-jest',
   },
   globals: {
     'ts-jest': {
       babelConfig: true,
     },
   },
-  moduleFileExtensions: ['js', 'jsx', 'json', 'ts', 'tsx'],
-  transformIgnorePatterns: [
-    'node_modules/(?!((jest-)?react-native(-.*)?|@react-native(-community)?|@rneui)/)',
-  ],
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/$1',
+    '^~/(.*)$': '<rootDir>/$1',
+  },
   testMatch: ['<rootDir>/src/**/__tests__/**/*.(spec|test).{js,jsx,ts,tsx}'],
-  // This is the only part which you can keep
-  // from the above linked tutorial's config:
-  cacheDirectory: '.jest/cache',
-  reporters: [
-    'default',
-    ['jest-junit', {outputDirectory: 'test-results', outputName: 'junit.xml'}],
+  transformIgnorePatterns: [
+    '<rootDir>/node_modules/(react-clone-referenced-element|@react-native-community|react-navigation|@react-navigation/.*|@unimodules/.*|native-base|react-native-code-push)',
   ],
+  moduleFileExtensions: ['js', 'json', 'jsx', 'ts', 'tsx', 'node'],
+  testPathIgnorePatterns: ['<rootDir>/node_modules/', '\\.snap$'],
+  cacheDirectory: '.jest/cache',
+  testEnvironment: 'node',
+  // testEnvironment: 'jsdom',
 };

@@ -18,7 +18,7 @@ const store = mockStore({
 describe('Test homepage screen', () => {
   beforeEach(() => {
     store.dispatch = jest.fn();
-    Setup(<Home hotels={hotels_response.hotels} />, store);
+    Setup(<Home />, store);
   });
 
   afterEach(cleanup);
@@ -30,7 +30,7 @@ describe('Test homepage screen', () => {
   });
 
   it('should display the list of hotels', () => {
-    expect(screen.getByTestId('search-box')).toBeDefined();
+    expect(screen.getByTestId('@search-box/input')).toBeDefined();
   });
 
   it('should render a list of hotels', () => {

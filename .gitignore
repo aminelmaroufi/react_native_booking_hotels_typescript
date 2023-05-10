@@ -21,6 +21,8 @@ DerivedData
 *.ipa
 *.xcuserstate
 
+ios/.xcode.env.local
+
 # Android/IntelliJ
 #
 build/
@@ -53,6 +55,8 @@ buck-out/
 */fastlane/Preview.html
 */fastlane/screenshots
 
+cxx/
+
 # Bundle artifact
 *.jsbundle
 
@@ -60,3 +64,10 @@ buck-out/
 /ios/Pods/
 
 /test-results
+
+/.vscode
+/.jest
+/coverage
+.env
+.env.development
+.env.production

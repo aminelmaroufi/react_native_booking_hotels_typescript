@@ -1,1 +1,0 @@
-{"version":3,"names":["baseURL","exports"],"sources":["config.ts"],"sourcesContent":["// export const API_URL = 'http://localhost:3000/api/v1';\n// export const baseURL = 'http://localhost:8000/api/v1';\n\n//PROD\nexport const baseURL = 'https://bookingapi-app.onrender.com/api/v1';\n"],"mappings":";;;;AAIO,IAAMA,OAAO,GAAG,4CAA4C;AAACC,OAAA,CAAAD,OAAA,GAAAA,OAAA"}

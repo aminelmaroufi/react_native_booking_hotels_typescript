@@ -5,7 +5,8 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import {useDispatch, useSelector} from 'react-redux';
 import {debounceTime} from 'rxjs/operators';
 import {Subject} from 'rxjs';
-import {useNavigation} from '@react-navigation/native';
+import {ParamListBase, useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {getHotels, getMoreHotels, selectHotel} from '../redux/actions';
 import {RootState} from '../redux/reducers';
 import {IHotel} from '../models';
@@ -16,7 +17,7 @@ import {HotelItem} from '../components/home/HotelItem';
 // };
 
 const Home: React.FC = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
   const dispatch = useDispatch();
   const {hotels, pages, page} = useSelector((state: RootState) => state.hotel);
   const [refreshing, setRefreshing] = useState(false);
@@ -38,7 +39,7 @@ const Home: React.FC = () => {
   useEffect(() => {
     const subscription = searchTerm
       .pipe(debounceTime(300))
-      .subscribe((term: string) => {
+      .subscribe((term: any) => {
         if (term.length === 0 || term.length > 2) {
           const params = {
             q: term,

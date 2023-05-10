@@ -1,8 +1,0 @@
-b6881e6bf5b2cd7cc41b2b7b6df4c176
-"use strict";
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.baseURL = void 0;
-exports.baseURL = 'https://bookingapi-app.onrender.com/api/v1';
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJleHBvcnRzIiwiYmFzZVVSTCJdLCJzb3VyY2VzIjpbIi9Vc2Vycy9BbWluZS9EZXNrdG9wL3Byb2plY3RzL0Jvb2tpbmdIb3RlbHNBcHAvc3JjL2NvbmZpZy9jb25maWcudHMiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gZXhwb3J0IGNvbnN0IEFQSV9VUkwgPSAnaHR0cDovL2xvY2FsaG9zdDozMDAwL2FwaS92MSc7XG4vLyBleHBvcnQgY29uc3QgYmFzZVVSTCA9ICdodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxJztcblxuLy9QUk9EXG5leHBvcnQgY29uc3QgYmFzZVVSTCA9ICdodHRwczovL2Jvb2tpbmdhcGktYXBwLm9ucmVuZGVyLmNvbS9hcGkvdjEnO1xuIl0sIm1hcHBpbmdzIjoiOzs7OztBQUlhQSxPQUFBLENBQUFDLE9BQU8sR0FBRyw0Q0FBNEMifQ==

@@ -1,5 +1,5 @@
 import React from 'react';
-
+// import {setImmediate} from 'timers';
 import {cleanup, fireEvent, screen} from '@testing-library/react-native';
 import configureStore from '../../redux/store';
 import Login from '../Login';
@@ -21,8 +21,8 @@ describe('Test Login Component', () => {
 
   it('should render all form element', () => {
     expect(screen.getByTestId('logo')).toBeDefined();
-    expect(screen.getByTestId('email')).toBeDefined();
-    expect(screen.getByTestId('password')).toBeDefined();
+    expect(screen.getByTestId('@email/input')).toBeDefined();
+    expect(screen.getByTestId('@password/input')).toBeDefined();
 
     const loginBtn = screen.getByTestId('login-btn');
 
@@ -30,8 +30,8 @@ describe('Test Login Component', () => {
   });
 
   it('should enable login button after entereing valid email and password value', () => {
-    const emailInput = screen.getByTestId('email');
-    const passwordInput = screen.getByTestId('password');
+    const emailInput = screen.getByTestId('@email/input');
+    const passwordInput = screen.getByTestId('@password/input');
     const loginBtn = screen.getByTestId('login-btn');
 
     expect(loginBtn.props.accessibilityState).toHaveProperty('disabled', true);

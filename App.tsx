@@ -7,7 +7,8 @@
  *
  * @format
  */
-
+/* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
+ * LTI update could not be added via codemod */
 import React, {useEffect} from 'react';
 import {StyleSheet, useColorScheme} from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
@@ -20,7 +21,7 @@ import RootNavigation from './src/navigation';
 import {navigationRef} from './src/navigation/rootNavigation';
 import {checkUser} from './src/redux/actions';
 
-const App = () => {
+const App: JSX.Element = () => {
   let dropDownAlertRef: any;
   const dispatch = useDispatch();
   const isDarkMode = useColorScheme() === 'dark';

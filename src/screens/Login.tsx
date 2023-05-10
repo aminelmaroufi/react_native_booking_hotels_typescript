@@ -20,10 +20,12 @@ const Login: React.FC = () => {
   const [password, setPassword] = useState('');
   const [selectedField, setSelectedField] = useState('');
   const [secureTextEntry, setSecureTextEntry] = useState(true);
-  const [isValid, setIsValid] = useState(null);
-  const [emailIsValid, setEmailIsValid] = useState(null);
-  const [emailValueIsValid, setEmailValueIsValid] = useState(null);
-  const [pwdIsValid, setPwdIsValid] = useState(null);
+  const [isValid, setIsValid] = useState<boolean | null>(false);
+  const [emailIsValid, setEmailIsValid] = useState<boolean | null>(false);
+  const [emailValueIsValid, setEmailValueIsValid] = useState<boolean | null>(
+    false,
+  );
+  const [pwdIsValid, setPwdIsValid] = useState<boolean | null>(false);
 
   const renderPasswordIcon = () => (
     <TouchableWithoutFeedback onPress={toggleSecureEntry}>
@@ -136,7 +138,7 @@ const Login: React.FC = () => {
                 ? renderValidInputIcon
                 : emailIsValid === false || emailValueIsValid === false
                 ? renderInvalidInputIcon
-                : null
+                : undefined
             }
             value={email}
             onChangeText={text => updateFields('email', text)}

@@ -1,10 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import {FlatList, StyleSheet} from 'react-native';
+import {FlatList, Text, StyleSheet} from 'react-native';
 import {Layout, Input} from '@ui-kitten/components';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {useDispatch, useSelector} from 'react-redux';
-import {debounceTime} from 'rxjs/operators';
-import {Subject} from 'rxjs';
 import {ParamListBase, useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {getHotels, getMoreHotels, selectHotel} from '../redux/actions';
@@ -16,45 +14,45 @@ import {HotelItem} from '../components/home/HotelItem';
 //   hotels: Array<IHotel>;
 // };
 
+const SearchIcon = () => (
+  <Icon style={styles.searchIcon} name="search" size={20} color="#444" />
+);
+
 const Home: React.FC = () => {
   const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
   const dispatch = useDispatch();
   const {hotels, pages, page} = useSelector((state: RootState) => state.hotel);
-  const [refreshing, setRefreshing] = useState(false);
-  const [searchTerm] = useState(() => new Subject());
-  const [q, setTermText] = useState('');
-
-  const SearchIcon = () => (
-    <Icon style={styles.searchIcon} name="search" size={20} color="#444" />
-  );
-
-  useEffect(() => {
-    dispatch(getHotels({q: '', page: 1}));
-  }, []);
+  const [refreshing, setRefreshing] = useState<boolean>(false);
+  const [q, setTermText] = useState<string>('');
+  const [mounted, setMounted] = useState<boolean>(false);
 
   useEffect(() => {
     setRefreshing(false);
   }, [hotels]);
 
   useEffect(() => {
-    const subscription = searchTerm
-      .pipe(debounceTime(300))
-      .subscribe((term: any) => {
-        if (term.length === 0 || term.length > 2) {
-          const params = {
-            q: term,
-            page: 1,
-          };
-          dispatch(getHotels(params));
-        }
-      });
-    return () => {
-      subscription.unsubscribe();
+    const params = {
+      q: '',
+      page: 1,
     };
-  }, [searchTerm]);
+    dispatch(getHotels(params));
+    setMounted(true);
+    return () => {
+      setMounted(false);
+    };
+  }, [dispatch]);
 
   useEffect(() => {
-    searchTerm.next(q);
+    if ((q.length >= 3 || q === '') && mounted) {
+      const timeoutId = setTimeout(() => {
+        const params = {
+          q,
+          page: 1,
+        };
+        dispatch(getHotels(params));
+      }, 500);
+      return () => clearTimeout(timeoutId);
+    }
   }, [q]);
 
   const _renderItem = ({item}: {item: IHotel}) => {
@@ -88,11 +86,11 @@ const Home: React.FC = () => {
         testID="search-box"
         placeholder="Search hotel by name, city ...."
         accessoryRight={SearchIcon}
-        onChangeText={nextValue => setTermText(nextValue)}
+        onChangeText={value => setTermText(value)}
         onSubmitEditing={() => do_search()}
         style={styles.searchInput}
       />
-      {hotels.length > 0 && (
+      {hotels.length > 0 ? (
         <FlatList
           data={hotels}
           numColumns={1}
@@ -103,6 +101,10 @@ const Home: React.FC = () => {
           refreshing={refreshing}
           onRefresh={_handleRefresh}
         />
+      ) : (
+        <Layout style={styles.noContentView}>
+          <Text>No hotels found</Text>
+        </Layout>
       )}
     </Layout>
   );
@@ -169,5 +171,6 @@ const styles = StyleSheet.create({
     width: 130,
   },
   iconAdressStyle: {marginRight: 5, marginTop: 2},
+  noContentView: {flex: 1, justifyContent: 'center', alignItems: 'center'},
 });
 export default Home;

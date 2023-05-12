@@ -2,12 +2,12 @@ import {AxiosError} from 'axios';
 import ActionTypes from '../actionTypes';
 import * as RootNavigation from '../../navigation/rootNavigation';
 import adapter from '../adapter';
+import {Store} from 'redux';
 
-const errorInterceptor = store => {
+const errorInterceptor = (store: Store) => {
   adapter.interceptors.response.use(
     response => response,
     (error: AxiosError) => {
-      console.log('error server');
       if (!error.response) {
         return RootNavigation.navigate('SERVER_ERROR_SCREEN', {});
       } else if (error.response && error.response.status === 401) {
@@ -28,7 +28,6 @@ const errorInterceptor = store => {
         //   console.log(error);
         //   console.groupEnd();
         // }
-        console.log('error status:', error.response.status);
         return error.response;
       }
     },

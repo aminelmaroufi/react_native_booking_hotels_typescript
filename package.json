@@ -1,5 +1,5 @@
 {
-  "name": "RnBookinghotelsapp",
+  "name": "Bookinghotelsapp",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -8,7 +8,8 @@
     "start": "react-native start",
     "android:release": "react-native bundle --platform android --entry-file index.tsx --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res --dev false --reset-cache --minify",
     "release-build": "react-native bundle --platform android --dev false --entry-file index.tsx --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/build/intermediates/res/merged/release/ && rm -rf android/app/src/main/res/drawable-* && rm -rf android/app/src/main/res/raw/* && cd android && ./gradlew assembleRelease && cd ..",
-    "test": "jest --watch",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "test:ci": "jest  --verbose --coverage --reporters=default jest-junit",
     "detox:debug-android": "detox test --build --configuration android.sim.debug",
     "detox:release-android": "detox test --build --configuration android.sim.release",
@@ -95,6 +96,9 @@
     "typescript": "^4.8.4"
   },
   "resolutions": {
-    "@types/react": "^17"
+    "@types/react": "^18"
+  },
+  "overrides": {
+    "react-devtools-core": "~4.25.0"
   }
 }

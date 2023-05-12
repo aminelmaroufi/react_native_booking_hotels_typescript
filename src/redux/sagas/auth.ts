@@ -11,6 +11,9 @@ export function* check_user_request() {
   try {
     yield put({type: ActionTypes.API_CALL_REQUEST});
     let response: AxiosResponse = yield call(checkUser);
+
+    if (!response) return;
+
     const data = response.data;
     if (data.ok) {
       if (data.result.user) {

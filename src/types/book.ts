@@ -2,7 +2,7 @@ import actionTypes from '../utils/actionTypes';
 import {IBook, ISecureCard, IHotel, IUser} from '../models';
 
 export interface BookState {
-  book: IBook | null;
+  book: IBook;
   bookings: Array<IBook>;
 }
 

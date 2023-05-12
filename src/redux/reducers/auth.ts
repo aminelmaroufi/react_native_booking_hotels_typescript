@@ -25,12 +25,15 @@ export default function reducer(state = initialState, action: authActions) {
         ...state,
         fetching: false,
         success: true,
+        error: false,
+        message: '',
       };
     case ActionTypes.API_CALL_FAILURE:
       return {
         ...state,
         fetching: false,
         error: true,
+        success: false,
         message: action.payload.message,
       };
     case ActionTypes.SUCCESS_OPERATION:
@@ -38,6 +41,7 @@ export default function reducer(state = initialState, action: authActions) {
         ...state,
         fetching: false,
         success: true,
+        error: false,
         message: action.payload.message,
       };
     case ActionTypes.CHECK_USER_SUCCESS:

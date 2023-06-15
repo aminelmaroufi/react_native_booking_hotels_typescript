@@ -73,21 +73,26 @@ const HotelDetails: React.FC = () => {
   };
 
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView testID="hotelDetails" style={styles.container}>
       <View>
         <Image
+          testID="mainImage"
           source={{uri: `${baseURL}/files/${book.hotel.second_picture}/view`}}
           style={styles.imageStyle}
         />
         <View style={styles.info}>
           <View style={styles.row}>
-            <Text style={styles.title}>{book.hotel.name}</Text>
-            <Rating
-              imageSize={15}
-              readonly
-              startingValue={book.hotel.rating}
-              style={styles.rating}
-            />
+            <Text testID="hotelName" style={styles.title}>
+              {book.hotel.name}
+            </Text>
+            <View testID="hotelComponent">
+              <Rating
+                imageSize={15}
+                readonly
+                startingValue={book.hotel.rating}
+                style={styles.rating}
+              />
+            </View>
           </View>
           <View style={styles.bookInfo}>
             {book.price > 0 && (
@@ -98,10 +103,12 @@ const HotelDetails: React.FC = () => {
                   {Moment(book.check_in_date).format('ll')} -{' '}
                   {Moment(book.check_out_date).format('ll')})
                 </Text>
-                <Text style={styles.price}>€{book.price}</Text>
+                <Text testID="hotelPrice" style={styles.price}>
+                  €{book.price}
+                </Text>
               </View>
             )}
-            <View style={[styles.row, {marginTop: 20}]}>
+            <View style={[styles.row, {marginTop: 20}]} testID="hotelAddress">
               <Icon
                 name="map-marker"
                 size={14}
@@ -110,7 +117,7 @@ const HotelDetails: React.FC = () => {
               />
               <Text style={styles.adress}>{book.hotel.address}</Text>
             </View>
-            <View style={[styles.row, {marginTop: 10}]}>
+            <View style={[styles.row, {marginTop: 10}]} testID="hotelLocation">
               <Icon
                 name="subway"
                 size={14}
@@ -136,6 +143,7 @@ const HotelDetails: React.FC = () => {
                 <Text style={styles.dateCheck}>Check-in</Text>
 
                 <Datepicker
+                  testID="checkInDateComponent"
                   style={{width: 140}}
                   date={book.check_in_date}
                   onSelect={date => _pickDate('checkIn', date)}
@@ -151,6 +159,7 @@ const HotelDetails: React.FC = () => {
               <View>
                 <Text style={styles.dateCheck}>Check-out</Text>
                 <Datepicker
+                  testID="checkOutDateComponent"
                   style={{width: 140}}
                   date={book.check_out_date}
                   onSelect={date => _pickDate('checkOut', date)}
@@ -165,7 +174,7 @@ const HotelDetails: React.FC = () => {
                 />
               </View>
             </View>
-            <View style={{flex: 1, marginTop: 40}}>
+            <View style={{flex: 1, marginTop: 40}} testID="hotelReviews">
               <Text style={styles.reviewsTitle}>
                 What guests loved the most:
               </Text>
@@ -255,6 +264,7 @@ const HotelDetails: React.FC = () => {
         </View>
         <View style={styles.viewButton}>
           <Button
+            testID="selectRoomBtn"
             title="Select rooms"
             containerStyle={{width: 'auto'}}
             buttonStyle={styles.button}

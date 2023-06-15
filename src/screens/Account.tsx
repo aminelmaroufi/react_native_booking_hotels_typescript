@@ -1,5 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import {StyleSheet, TouchableWithoutFeedback, Text, View} from 'react-native';
+import {
+  StyleSheet,
+  TouchableWithoutFeedback,
+  Text,
+  View,
+  KeyboardAvoidingView,
+} from 'react-native';
 import {Layout, Input} from '@ui-kitten/components';
 import {Button} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -7,34 +13,48 @@ import Popover, {
   PopoverPlacement,
   PopoverMode,
 } from 'react-native-popover-view';
-import {useNavigation} from '@react-navigation/native';
+import {ParamListBase, useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {IUser} from '../models';
 import {emptyUser} from '../models/user';
 import {saveAccount} from '../redux/actions';
 import {FormMessages} from '../utils/actionTypes';
 
-const Account: React.FC<Props> = () => {
+const Account: React.FC = () => {
   let lastnameRef: any = null,
     emailRef: any = null,
     passwordRef: any = null,
     phoneRef: any = null;
 
-  const navigation = useNavigation();
+  const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
+
   const dispatch = useDispatch();
+  // const currUser = useSelector((state: RootState) => state.auth.user);
+
   const [user, setUser] = useState(emptyUser);
   const [selectedField, setSelectedField] = useState('');
   const [secureTextEntry, setSecureTextEntry] = useState(true);
   const [showPopover, setShowPopover] = useState(false);
-  const [isValid, setIsValid] = useState(null);
-  const [fNIsValid, setFNIsValid] = useState(null);
-  const [lNIsValid, setLNIsValid] = useState(null);
-  const [phoneIsValid, setPhoneIsValid] = useState(null);
-  const [phoneValueIsValid, setPhoneValueIsValid] = useState(null);
-  const [emailIsValid, setEmailIsValid] = useState(null);
-  const [emailValueIsValid, setEmailValueIsValid] = useState(null);
-  const [pwdIsValid, setPwdIsValid] = useState(null);
+  const [isValid, setIsValid] = useState<boolean | null>(null);
+  const [fNIsValid, setFNIsValid] = useState<boolean | null>(null);
+  const [lNIsValid, setLNIsValid] = useState<boolean | null>(null);
+  const [phoneIsValid, setPhoneIsValid] = useState<boolean | null>(null);
+  const [phoneValueIsValid, setPhoneValueIsValid] = useState<boolean | null>(
+    null,
+  );
+  const [emailIsValid, setEmailIsValid] = useState<boolean | null>(null);
+  const [emailValueIsValid, setEmailValueIsValid] = useState<boolean | null>(
+    null,
+  );
+  const [pwdIsValid, setPwdIsValid] = useState<boolean | null>(null);
+
+  // useEffect(() => {
+  //   if (currUser._id) {
+  //     navigation.pop();
+  //     navigation.navigate('Login');
+  //   }
+  // }, [currUser]);
 
   const renderPasswordIcon = () => (
     <TouchableWithoutFeedback onPress={toggleSecureEntry}>
@@ -236,14 +256,17 @@ const Account: React.FC<Props> = () => {
   };
 
   const _onSave = () => {
-    dispatch(saveAccount(user));
+    if (isValid) {
+      dispatch(saveAccount(user, navigation));
+    }
   };
 
   return (
-    <Layout style={styles.container}>
+    <Layout testID="accountView" style={styles.container}>
       <View>
         <View style={styles.inputContainer}>
           <Input
+            testID="firstname"
             autoFocus
             label="Firstname"
             placeholder="Place your first name"
@@ -263,11 +286,10 @@ const Account: React.FC<Props> = () => {
             onSubmitEditing={e => lastnameRef.focus()}
           />
           {fNIsValid === false && (
-            <View style={styles.errorContainer}>
+            <View style={styles.errorContainer} testID="firstnameMsgError">
               <Icon
                 name="exclamation-triangle"
                 color={'#ff375d'}
-                g
                 size={8}
                 style={styles.errorIcon}
               />
@@ -277,6 +299,7 @@ const Account: React.FC<Props> = () => {
         </View>
         <View style={styles.inputContainer}>
           <Input
+            testID="lastname"
             ref={ref => (lastnameRef = ref)}
             label="Lastname"
             placeholder="Place your last name"
@@ -296,7 +319,7 @@ const Account: React.FC<Props> = () => {
             onSubmitEditing={e => emailRef.focus()}
           />
           {lNIsValid === false && (
-            <View style={styles.errorContainer}>
+            <View style={styles.errorContainer} testID="lastnameMsgErrors">
               <Icon
                 name="exclamation-triangle"
                 color={'#ff375d'}
@@ -309,6 +332,7 @@ const Account: React.FC<Props> = () => {
         </View>
         <View style={styles.inputContainer}>
           <Input
+            testID="email"
             ref={ref => (emailRef = ref)}
             label="Email Address"
             placeholder="Place your email address"
@@ -333,7 +357,7 @@ const Account: React.FC<Props> = () => {
             onSubmitEditing={e => passwordRef.focus()}
           />
           {emailIsValid === false && (
-            <View style={styles.errorContainer}>
+            <View style={styles.errorContainer} testID="emailMsgErrors">
               <Icon
                 name="exclamation-triangle"
                 color={'#ff375d'}
@@ -344,7 +368,7 @@ const Account: React.FC<Props> = () => {
             </View>
           )}
           {emailValueIsValid === false && (
-            <View style={styles.errorContainer}>
+            <View style={styles.errorContainer} testID="emailNotValidMsg">
               <Icon
                 name="exclamation-triangle"
                 color={'#ff375d'}
@@ -359,6 +383,7 @@ const Account: React.FC<Props> = () => {
         </View>
         <View style={styles.inputContainer}>
           <Input
+            testID="password"
             ref={ref => (passwordRef = ref)}
             label="Password"
             placeholder="Place your password"
@@ -378,6 +403,7 @@ const Account: React.FC<Props> = () => {
               {display: checkRegex(user.password) ? 'flex' : 'none'},
             ]}>
             <Popover
+              testID="popoverModal"
               mode={PopoverMode.TOOLTIP}
               placement={PopoverPlacement.TOP}
               isVisible={checkRegex(user.password)}
@@ -482,6 +508,7 @@ const Account: React.FC<Props> = () => {
         </View>
         <View style={styles.inputContainer}>
           <Input
+            testID="phone"
             ref={ref => (phoneRef = ref)}
             label="Phone Number"
             placeholder="Place your phone number"
@@ -506,7 +533,7 @@ const Account: React.FC<Props> = () => {
             onSubmitEditing={() => _onSave()}
           />
           {phoneIsValid === false && (
-            <View style={styles.errorContainer}>
+            <View style={styles.errorContainer} testID="phoneMsgErrors">
               <Icon
                 name="exclamation-triangle"
                 color={'#ff375d'}
@@ -532,6 +559,7 @@ const Account: React.FC<Props> = () => {
         </View>
         <View style={styles.buttonContainer}>
           <Button
+            testID="nextStepBtn"
             title={isValid ? 'Next Step' : 'Add your info'}
             containerStyle={{width: '100%'}}
             buttonStyle={styles.button}
@@ -540,15 +568,17 @@ const Account: React.FC<Props> = () => {
             disabled={!isValid}
             onPress={() => _onSave()}
           />
-          <Text style={styles.loginStyles}>
-            Already have an account?
+          <View style={{flexDirection: 'row', marginTop: 5}}>
+            <Text style={styles.loginStyles} testID="loginText">
+              Already have an account?
+            </Text>
             <Text
+              testID="loginBtn"
               style={styles.loginTextStyles}
               onPress={() => navigation.navigate('Login')}>
-              {' '}
               Login
             </Text>
-          </Text>
+          </View>
         </View>
       </View>
     </Layout>
@@ -591,7 +621,6 @@ const styles = StyleSheet.create({
   loginStyles: {
     color: '#2756a1',
     fontSize: 13,
-    marginTop: 5,
   },
   loginTextStyles: {
     textDecorationLine: 'underline',

@@ -106,6 +106,10 @@ export type notActionPayload = {
   payload: null;
 };
 
+export type selectHotelPayload = {
+  type: actionTypes.SELECT_HOTEL;
+};
+
 export type authActions =
   | notActionPayload
   | FetchRequest
@@ -116,4 +120,5 @@ export type authActions =
   | loginSuccessPayload
   | checkUserSuccessPayload
   | addCardSuccessPayload
-  | setDefaultCardsPayload;
+  | setDefaultCardsPayload
+  | selectHotelPayload;

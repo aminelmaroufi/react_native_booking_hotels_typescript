@@ -50,6 +50,13 @@ export default function reducer(state = initialState, action: authActions) {
         user: action.payload.user ? action.payload.user : emptyUser,
         isLoggedIn: action.payload.user ? true : false,
       };
+    case ActionTypes.SELECT_HOTEL:
+      return {
+        ...state,
+        success: false,
+        error: false,
+        message: '',
+      };
     case ActionTypes.CREATE_ACCOUNT_SUCCESS:
       return {
         ...state,

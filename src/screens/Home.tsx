@@ -55,8 +55,14 @@ const Home: React.FC = () => {
     }
   }, [q]);
 
-  const _renderItem = ({item}: {item: IHotel}) => {
-    return <HotelItem item={item} onSelectHotel={onSelectHotel} />;
+  const _renderItem = ({item, index}: {item: IHotel; index: number}) => {
+    return (
+      <HotelItem
+        index={`item${index}`}
+        item={item}
+        onSelectHotel={onSelectHotel}
+      />
+    );
   };
 
   const onSelectHotel = (item: IHotel) => {
@@ -81,7 +87,7 @@ const Home: React.FC = () => {
   };
 
   return (
-    <Layout style={styles.container}>
+    <Layout testID="Home" style={styles.container}>
       <Input
         testID="search-box"
         placeholder="Search hotel by name, city ...."
@@ -92,6 +98,7 @@ const Home: React.FC = () => {
       />
       {hotels.length > 0 ? (
         <FlatList
+          testID="hotels-list"
           data={hotels}
           numColumns={1}
           keyExtractor={(item: IHotel) => item._id}

@@ -13,9 +13,10 @@ export const updateUserFields = (user: IUser) => ({
   },
 });
 
-export const saveAccount = (account: IUser) => ({
+export const saveAccount = (account: IUser, navigation: any) => ({
   type: actionTypes.SAVE_ACCOUNT_REQUEST,
   account,
+  navigation,
 });
 
 export const loginRequest = (email: string, password: string) => ({

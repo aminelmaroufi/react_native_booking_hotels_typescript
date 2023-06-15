@@ -21,6 +21,7 @@ default:
 
 stages:
   - test
+  - e2e
 
 unit-tests:
   image: node:latest
@@ -35,3 +36,12 @@ unit-tests:
     paths:
       - coverage/
       - test-results/
+
+detox_test:
+  stage: e2
+  image: node:lts
+  script:
+    - npm install -g detox-cli
+    - npm ci
+    - npm run detox:build:android
+    - npm run detox:test:android

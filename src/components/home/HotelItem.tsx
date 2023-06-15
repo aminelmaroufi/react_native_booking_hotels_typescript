@@ -6,6 +6,7 @@ import {IHotel} from '../../models';
 import {baseURL} from '../../config/config';
 
 type Props = {
+  index: string;
   item: IHotel;
   onSelectHotel: (item: IHotel) => void;
 };
@@ -15,6 +16,7 @@ export const HotelItem = (props: Props) => {
 
   return (
     <TouchableOpacity
+      testID={props.index}
       style={styles.hotelRow}
       onPress={() => props.onSelectHotel(item)}>
       <Image

@@ -287,8 +287,8 @@ describe('Test watchAuthRequest sagas', () => {
           payload: {message: success_message},
         },
         {type: ActionTypes.CREATE_ACCOUNT_SUCCESS, payload: {user: currUser}},
-        CommonActions.goBack(),
-        CommonActions.navigate({name: 'Login'}),
+        // CommonActions.goBack(),
+        // CommonActions.navigate({name: 'Login'}),
       ];
       expect(dispatched).toEqual(expectedDispatched);
       saveAccountRequest.mockClear();

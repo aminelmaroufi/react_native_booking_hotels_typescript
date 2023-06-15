@@ -16,6 +16,7 @@ const RootNavigation = ({}, ref: React.Ref<any>) => {
         initialRouteName={Routes.HOME_STACK}
         screenOptions={({route}) => ({
           headerShown: false,
+          tabBarHideOnKeyboard: true,
           tabBarIcon: ({color, size}) => {
             let iconName: string = Routes.HOME_STACK;
 

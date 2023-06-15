@@ -6,6 +6,7 @@ import {baseURL} from '../../config/config';
 import {IRoom} from '../../models';
 
 type Props = {
+  index: string;
   room: IRoom;
   selectRoom: (item: IRoom) => void;
 };
@@ -13,7 +14,7 @@ export const RoomItem = (props: Props) => {
   const item = props.room;
 
   return (
-    <View style={styles.item}>
+    <View testID={props.index} style={styles.item}>
       <View style={styles.row}>
         <View style={{flex: 1}}>
           <Text style={styles.title}>{item.title}</Text>
@@ -92,6 +93,7 @@ export const RoomItem = (props: Props) => {
       <Text style={styles.price}>€{item.price}</Text>
       <View style={{flex: 1, marginTop: 30}}>
         <Button
+          testID={`${props.index}-selectBtn`}
           title="Select"
           containerStyle={{width: 'auto'}}
           buttonStyle={styles.button}

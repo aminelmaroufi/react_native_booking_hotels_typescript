@@ -1,5 +1,5 @@
 // import ActionTypes from '../utils/actionTypes';
-import {put, call, all, takeLatest} from 'redux-saga/effects';
+import {put, call, all, takeLatest, delay} from 'redux-saga/effects';
 import ActionTypes from '../../utils/actionTypes';
 import {CommonActions} from '@react-navigation/native';
 import {checkUser, saveAccount, login} from '../../api';
@@ -73,11 +73,12 @@ export function* save_account(action: any) {
             user: data.result.user,
           },
         }),
-        put(CommonActions.goBack()),
-        put(CommonActions.navigate({name: 'Login'})),
+        // put(CommonActions.goBack()),
+        // put(CommonActions.navigate({name: 'Login'})),
       ]);
-      // action.navigation.pop();
-      // RootNavigation.navigate('Login', {});
+
+      action.navigation.pop();
+      RootNavigation.navigate('Login', {});
     } else {
       yield put({
         type: ActionTypes.API_CALL_FAILURE,

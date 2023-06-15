@@ -111,10 +111,10 @@ const Login: React.FC = () => {
   }, [emailIsValid, emailValueIsValid, pwdIsValid]);
 
   return (
-    <Layout style={styles.container}>
+    <Layout testID="Login" style={styles.container}>
       <Image
         testID="logo"
-        source={require('../assets/logo.png')}
+        source={require('../assets/icon.png')}
         style={styles.logo}
       />
       <View style={styles.form}>
@@ -227,8 +227,9 @@ const styles = StyleSheet.create({
     paddingTop: 40,
   },
   logo: {
-    height: 200,
-    width: 400,
+    height: 120,
+    width: 120,
+    borderRadius: 10,
     marginBottom: 100,
   },
   form: {

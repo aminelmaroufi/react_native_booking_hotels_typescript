@@ -58,7 +58,10 @@ const App: JSX.Element = () => {
       )}
 
       {(error || success) && (
-        <DropdownAlert ref={ref => (dropDownAlertRef = ref)} />
+        <DropdownAlert
+          testID="dropdownAlert"
+          ref={ref => (dropDownAlertRef = ref)}
+        />
       )}
     </ApplicationProvider>
   );

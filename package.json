@@ -11,8 +11,8 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:ci": "jest  --verbose --coverage --reporters=default jest-junit",
-    "detox:build:android": "detox build --configuration android.sim.release",
-    "detox:test:android": "detox test --configuration android.sim.release",
+    "detox:build:android": "detox build --configuration android.emu.release",
+    "detox:test:android": "detox test --configuration android.emu.release",
     "detox:build:ios": "detox build --configuration ios.sim.debug",
     "detox:test:ios": "detox test --configuration ios.sim.release --watch",
     "lint": "eslint ."

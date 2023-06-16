@@ -2,22 +2,32 @@ default:
   image: node:latest
 
 stages:
+  - build
   - test
 
 variables:
-  JAVA_HOME: '/usr/lib/jvm/java-11-openjdk-amd64'
-  ANDROID_HOME: '/opt/android/sdk'
-
-before_script:
-  - apt-get update && apt-get -y install openjdk-8-jre
-  - export JAVA_HOME=$JAVA_HOME
-  - export PATH=$JAVA_HOME/bin:$PATH
-  - export ANDROID_HOME=$ANDROID_HOME
-  - export PATH=$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$PATH
+  ANDROID_COMPILE_SDK: '30'
+  ANDROID_BUILD_TOOLS: '30.0.3'
+  ANDROID_SDK_TOOLS: '6858069'
 
 cache:
+  key: '$CI_COMMIT_REF_NAME'
   paths:
-    - node_modules/
+    - .gradle/
+
+build:
+  stage: build
+  image: openjdk:8-jdk
+  before_script:
+    - apt-get update
+    - apt-get install -y gradle
+  script:
+    - npm install -g detox-cli
+    - npm ci
+    - npm run detox:build:android
+  artifacts:
+    paths:
+      - android/app/build/outputs/apk/androidTest/release/app-release-androidTest.apk
 
 unit-tests:
   image: node:lts
@@ -35,12 +45,22 @@ unit-tests:
 
 detox_test:
   stage: test
-  image: node:lts
+  image: reactnativecommunity/react-native-android
   only:
     - master
+      - export ANDROID_HOME="/opt/android-sdk-linux"
+    - export PATH="$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools"
+    - echo "sdk.dir=$ANDROID_HOME" > android/local.properties
+    - sdkmanager "platform-tools" "platforms;android-$ANDROID_COMPILE_SDK" "build-tools;$ANDROID_BUILD_TOOLS"
+    - sdkmanager "system-images;android-$ANDROID_COMPILE_SDK;google_apis;x86" "emulator"
+    - echo "no" | avdmanager create avd -n testAVD -k "system-images;android-$ANDROID_COMPILE_SDK;google_apis;x86" --force
+    - chmod +x android/gradlew
   script:
-    - echo $JAVA_HOM
-    - npm install -g detox-cli
-    - npm ci
-    - npm run detox:build:android
+    # - npm install -g detox-cli
+    # - npm ci
+    # - npm run detox:build:android
+    - emulator -avd testAVD -no-window -no-audio -no-boot-anim &
+    - adb wait-for-device
+    - adb shell input keyevent 82
+    # - npm run detox:build:android
     - npm run detox:test:android

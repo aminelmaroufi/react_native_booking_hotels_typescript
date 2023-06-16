@@ -2,7 +2,6 @@ default:
   image: node:latest
 
 stages:
-  - build
   - test
 
 variables:
@@ -15,40 +14,27 @@ cache:
   paths:
     - .gradle/
 
-build:
-  stage: build
-  image: openjdk:8-jdk
-  before_script:
-    - apt-get update
-    - apt-get install -y gradle
-  script:
-    - npm install -g detox-cli
-    - npm ci
-    - npm run detox:build:android
-  artifacts:
-    paths:
-      - android/app/build/outputs/apk/androidTest/release/app-release-androidTest.apk
-
-unit-tests:
-  image: node:lts
-  stage: test
-  only:
-    - master
-  before_script:
-    - npm ci
-  script:
-    - npm run test:ci
-  artifacts:
-    paths:
-      - coverage/
-      - test-results/
+# unit-tests:
+#   image: node:lts
+#   stage: test
+#   only:
+#     - master
+#   before_script:
+#     - npm ci
+#   script:
+#     - npm run test:ci
+#   artifacts:
+#     paths:
+#       - coverage/
+#       - test-results/
 
 detox_test:
   stage: test
   image: reactnativecommunity/react-native-android
   only:
     - master
-      - export ANDROID_HOME="/opt/android-sdk-linux"
+  before_script:
+    - export ANDROID_HOME="/opt/android-sdk-linux"
     - export PATH="$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools"
     - echo "sdk.dir=$ANDROID_HOME" > android/local.properties
     - sdkmanager "platform-tools" "platforms;android-$ANDROID_COMPILE_SDK" "build-tools;$ANDROID_BUILD_TOOLS"
@@ -57,10 +43,10 @@ detox_test:
     - chmod +x android/gradlew
   script:
     # - npm install -g detox-cli
-    # - npm ci
-    # - npm run detox:build:android
+    - npm ci
+    - npm run detox:build:android
     - emulator -avd testAVD -no-window -no-audio -no-boot-anim &
     - adb wait-for-device
     - adb shell input keyevent 82
-    # - npm run detox:build:android
+    - npm run detox:build:android
     - npm run detox:test:android

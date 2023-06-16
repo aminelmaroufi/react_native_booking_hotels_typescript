@@ -1,35 +1,27 @@
-# image: node:latest
-
-# before_script:
-#   - apt-get update -qy
-#   - apt-get install -y ruby-dev
-#   - gem install dpl
-
-# stages:
-#   - production
-
-# production:
-#   stage: production
-#   image: ruby:latest
-#   script:
-#     - dpl --provider=heroku --app=$HEROKU_APP_NAME --api-key=$HEROKU_API_KEY
-#   only:
-#     - production
-
 default:
   image: node:latest
 
 stages:
+  - build
   - test
-  - e2e
+
+variables:
+  JAVA_HOME: '/usr/lib/jvm/java-11-openjdk-amd64'
+  ANDROID_HOME: '/opt/android/sdk'
+
+before_script:
+  - export JAVA_HOME=$JAVA_HOME
+  - export PATH=$JAVA_HOME/bin:$PATH
+  - export ANDROID_HOME=$ANDROID_HOME
+  - export PATH=$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$PATH
 
 unit-tests:
-  image: node:latest
+  image: node:lts
   stage: test
   only:
     - master
   before_script:
-    - npm install
+    - npm ci
   script:
     - npm run test:ci
   artifacts:
@@ -38,8 +30,10 @@ unit-tests:
       - test-results/
 
 detox_test:
-  stage: e2e
+  stage: test
   image: node:lts
+  only:
+    - master
   script:
     - npm install -g detox-cli
     - npm ci

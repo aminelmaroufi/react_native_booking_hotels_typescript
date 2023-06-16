@@ -9,10 +9,15 @@ variables:
   ANDROID_HOME: '/opt/android/sdk'
 
 before_script:
+  - apt-get update && apt-get -y install openjdk-8-jre
   - export JAVA_HOME=$JAVA_HOME
   - export PATH=$JAVA_HOME/bin:$PATH
   - export ANDROID_HOME=$ANDROID_HOME
   - export PATH=$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$PATH
+
+cache:
+  paths:
+    - node_modules/
 
 unit-tests:
   image: node:lts

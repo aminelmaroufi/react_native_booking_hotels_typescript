@@ -2,7 +2,6 @@ default:
   image: node:latest
 
 stages:
-  - build
   - test
 
 variables:
@@ -35,6 +34,7 @@ detox_test:
   only:
     - master
   script:
+    - echo $JAVA_HOM
     - npm install -g detox-cli
     - npm ci
     - npm run detox:build:android

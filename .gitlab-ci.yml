@@ -46,7 +46,7 @@ detox_test:
     - npm ci
     - npm run detox:build:android
     - emulator -avd testAVD -no-window -no-audio -no-boot-anim &
-    - adb wait-for-device
+    # - adb wait-for-device
     - adb shell input keyevent 82
-    - npm run detox:build:android
+    # - npm run detox:build:android
     - npm run detox:test:android

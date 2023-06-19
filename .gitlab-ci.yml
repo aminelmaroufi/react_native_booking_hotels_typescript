@@ -4,49 +4,47 @@ default:
 stages:
   - test
 
-variables:
-  ANDROID_COMPILE_SDK: '30'
-  ANDROID_BUILD_TOOLS: '30.0.3'
-  ANDROID_SDK_TOOLS: '6858069'
+# variables:
+#   ANDROID_COMPILE_SDK: '30'
+#   ANDROID_BUILD_TOOLS: '30.0.3'
+#   ANDROID_SDK_TOOLS: '6858069'
 
-cache:
-  key: '$CI_COMMIT_REF_NAME'
-  paths:
-    - .gradle/
+# cache:
+#   key: '$CI_COMMIT_REF_NAME'
+#   paths:
+#     - .gradle/
 
-# unit-tests:
-#   image: node:lts
-#   stage: test
-#   only:
-#     - master
-#   before_script:
-#     - npm ci
-#   script:
-#     - npm run test:ci
-#   artifacts:
-#     paths:
-#       - coverage/
-#       - test-results/
-
-detox_test:
+unit-tests:
+  image: node:lts
   stage: test
-  image: reactnativecommunity/react-native-android
   only:
     - master
   before_script:
-    - export ANDROID_HOME="/opt/android-sdk-linux"
-    - export PATH="$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools"
-    - echo "sdk.dir=$ANDROID_HOME" > android/local.properties
-    - sdkmanager "platform-tools" "platforms;android-$ANDROID_COMPILE_SDK" "build-tools;$ANDROID_BUILD_TOOLS"
-    - sdkmanager "system-images;android-$ANDROID_COMPILE_SDK;google_apis;x86" "emulator"
-    - echo "no" | avdmanager create avd -n testAVD -k "system-images;android-$ANDROID_COMPILE_SDK;google_apis;x86" --force
-    - chmod +x android/gradlew
-  script:
-    # - npm install -g detox-cli
     - npm ci
-    - npm run detox:build:android
-    - emulator -avd testAVD -no-window -no-audio -no-boot-anim &
-    # - adb wait-for-device
-    - adb shell input keyevent 82
-    # - npm run detox:build:android
-    - npm run detox:test:android
+  script:
+    - npm run test:ci
+  artifacts:
+    paths:
+      - coverage/
+      - test-results/
+# detox_test:
+# stage: test
+# image: reactnativecommunity/react-native-android
+# only:
+#   - master
+# before_script:
+#   - export ANDROID_HOME="/opt/android-sdk-linux"
+#   - export PATH="$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools"
+#   - echo "sdk.dir=$ANDROID_HOME" > android/local.properties
+#   - sdkmanager "platform-tools" "platforms;android-$ANDROID_COMPILE_SDK" "build-tools;$ANDROID_BUILD_TOOLS"
+#   - sdkmanager "system-images;android-$ANDROID_COMPILE_SDK;google_apis;x86" "emulator"
+#   - echo "no" | avdmanager create avd -n testAVD -k "system-images;android-$ANDROID_COMPILE_SDK;google_apis;x86" --force
+#   - chmod +x android/gradlew
+# script:
+#   # - npm install -g detox-cli
+#   - npm ci
+#   - emulator -avd testAVD -no-window -no-audio -no-boot-anim &
+#   # - adb wait-for-device
+#   - adb shell input keyevent 82
+#   - npm run detox:build:android
+#   - npm run detox:test:android

@@ -38,7 +38,7 @@ describe('Hotel details page', () => {
     await element(by.text('OK')).tap();
   });
 
-  it('should navigate to check room page after choosing a valid check-in and cgeck-out date', async () => {
+  it('should navigate to check room page after choosing a valid check-in and check-out date', async () => {
     await element(by.id('checkInDateComponent')).tap();
     let date = moment();
     date.add(2, 'days');

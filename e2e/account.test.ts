@@ -59,9 +59,9 @@ describe('Create Account page', () => {
     const phoneInput = element(by.id('@phone/input'));
 
     await phoneInput.typeText('0654566545');
-    await phoneInput.tapReturnKey();
-
-    // await element(by.id('nextStepBtn')).tap();
+    // await phoneInput.tapReturnKey();
+    await device.pressBack();
+    await element(by.id('nextStepBtn')).tap();
     await waitFor(element(by.id('dropdownAlert')))
       .toBeVisible()
       .withTimeout(10000);

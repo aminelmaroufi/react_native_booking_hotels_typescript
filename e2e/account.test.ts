@@ -47,7 +47,11 @@ describe('Create Account page', () => {
   it('should create account successfully and navigate to next step page', async () => {
     await element(by.id('@firstname/input')).typeText('Test FN');
     await element(by.id('@lastname/input')).typeText('Test LN');
-    await element(by.id('@email/input')).typeText(getRandomEmail());
+
+    const emailInput = element(by.id('@email/input'));
+    await emailInput.typeText(getRandomEmail());
+    await emailInput.tapReturnKey();
+
     const passwordInput = element(by.id('@password/input'));
     await passwordInput.typeText('Azerty123@@');
     await passwordInput.tapReturnKey();

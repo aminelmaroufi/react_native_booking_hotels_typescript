@@ -151,7 +151,7 @@ function* create_booking(action: any) {
         }),
       ]);
       action.navigation.popToTop();
-      RootNavigation.navigate('Bookings', {});
+      action.navigation.navigate('Bookings', {});
     } else {
       yield put({
         type: ActionTypes.API_CALL_FAILURE,

@@ -67,7 +67,12 @@ export default function reducer(state = initialState, action: bookActions) {
       };
     case ActionTypes.CREATE_BOOKING_SUCCESS:
       let bookings = state.bookings;
-      bookings.unshift(action.payload.book);
+      if (bookings.length) {
+        bookings.unshift(action.payload.book);
+      } else {
+        bookings.push(action.payload.book);
+      }
+
       return {
         ...state,
         book: initialState.book,

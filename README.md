@@ -29,4 +29,4 @@ $ npm run ios
 $ npm run test
 ```
 ## E2E Testing
-to run e2e tests using Detox fllow the steps in Detox official documentation: https://wix.github.io/Detox/docs/introduction/getting-started/
+to run e2e tests using Detox follow the steps in the Detox official documentation: https://wix.github.io/Detox/docs/introduction/getting-started/

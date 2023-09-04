@@ -69,5 +69,3 @@ cxx/
 /.jest
 /coverage
 .env
-.env.development
-.env.production
